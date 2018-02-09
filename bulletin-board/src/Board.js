@@ -20,13 +20,13 @@ class Board extends Component{
 
 //fire right before render
 componentWillMount(){
-    var self = this
+    // var self = this
     if(this.props.count){
       fetch(`https://baconipsum.com/api/?type=all-meat&sentences=${this.props.count}`)
       .then(response => response.json())
       .then(json => json[0]
                   .split('. ')
-                  .forEach(sentence => self.add(sentence.substring(0,25))))
+                  .forEach(sentence => this.add(sentence.substring(0,25))))
     }
 }
 
@@ -73,8 +73,8 @@ componentWillMount(){
 // here note is each object and Note is comp, i is just index
 eachNote(note,i){
   return (
-    <Note key={i}
-          index={i}
+    <Note key={note.id}
+          index={note.id}
           onChange={this.update}
           onRemove ={this.remove} >
         {note.note}
