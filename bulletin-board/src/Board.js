@@ -1,14 +1,38 @@
 import React, {Component} from 'react'
 import  Note from './Note'
+import FaPlus from 'react-icons/lib/fa/plus'
 
 class Board extends Component{
   constructor(props){
     super(props)
     this.state = {
-      notes: [{id:0,note:"call lisa"},{id:1,note:"Email John"}] }
+      notes: [  {id:0,note:"call lisa"},{id:1,note:"Email John"}]
+    }
+
+      this.add=this.add.bind(this)
       this.eachNote=this.eachNote.bind(this)
       this.update=this.update.bind(this)
       this.remove=this.remove.bind(this)
+      this.nextID=this.nextID.bind(this)
+  }
+
+  add(text){
+    this.setState(prevState =>({
+      notes: [
+      ...prevState.notes,
+      {
+        id: this.nextID(),
+       note: text}
+     ]
+
+    }))
+
+  }
+
+
+  nextID(){
+    this.uniqueId = this.uniqueId || 0
+    return this.uniqueId++
   }
 
 //will capture the user text in note comp
@@ -51,7 +75,10 @@ eachNote(note,i){
   render(){
     return (
       <div className='board'>
-
+      <button onClick={this.add.bind(null, "new note")}
+        id="add">
+        <FaPlus />
+      </button>
         {this.state.notes.map(this.eachNote)}
       </div>
 
