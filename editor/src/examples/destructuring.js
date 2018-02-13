@@ -34,7 +34,7 @@ export function destructuring(){
   // const horsdoeuvre = ['crab cakes', 'spring rolls', 'fried pickles', 'caviar']
   //
   // let [crabCake, , , grossFishEggs] = horsdoeuvre
-  // //horsdoeuvre[0]
+  //
   // console.log(crabCake)         //"crab cakes"
   // console.log(grossFishEggs)    //"caviar"
 
