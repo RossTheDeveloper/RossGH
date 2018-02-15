@@ -1,3 +1,5 @@
+// the query key is for graphql which wants a string 
+
 const shakespeareApi = "https://api.graph.cool/simple/v1/shakespeare"
 
 let options = () => {
@@ -6,7 +8,17 @@ let options = () => {
     "Content-Type": "application/json"
   },
   body: JSON.stringify({
-    //we'll write this later
+    query: `{
+      allPoems(
+        first:1
+        skip: ${randomInt(0,160)}
+      ) {
+        title
+        author
+        lines
+        text
+      }
+    }`
   })
 }
 
