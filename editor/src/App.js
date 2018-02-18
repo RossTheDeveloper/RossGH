@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {Markup, Editor, Container, Column, Row, RuleInput, RuleLabel, StyleInput, Button, Document} from './styled'
+import hlsjs from 'highlight.js'
 
 class App extends Component {
 
@@ -23,6 +24,47 @@ state={
 
   }
 
+  rules = () => {
+     let {rules} = this.state
+     let array = []
+     let fields = ['name', 'begin', 'end']
+     for (let i = 0; i < rules; i++) {
+       array.push(
+         <Row
+           key={i}
+         >
+           <Column>
+             {fields.map( (field, index) => {
+               return (
+                 <Column
+                   key={index}
+                 >
+                   <RuleLabel>
+                     {field}
+                   </RuleLabel>
+                   <RuleInput
+                     value={this.state[`${field}${i}`]}
+                     onChange={this.handleChange}
+                     name={`${field}${i}`}
+                   />
+                 </Column>
+               )
+             })}
+           </Column>
+           <StyleInput
+             value={this.state[`style${i}`]}
+             onChange={this.handleChange}
+             name={`style${i}`}
+           />
+         </Row>
+       )
+     }
+
+     return array
+   }
+
+
+
   newFields = () => {
     this.setState( (prevState) => {
       let {rules} = prevState
@@ -44,15 +86,23 @@ state={
     })
   }
 
+//using the hl librarby , it has a function that allows us to pass in a string
+//and it will turn that into html Markup
+convertToMarkup = (text="") => {
+  return {
+    __html: hlsjs.highlightAuto(text).value
+  }
+}
 
 // want to hold the value of editor in state, since its textarea
   render() {
     //using destructoring
-    let {value} = this.state
-    let {handleChange, newFields} = this
+    let {editor} = this.state
+    let {handleChange, newFields, rules, convertToMarkup} = this
     return (
       <Container>
         <Column>
+          {rules()}
           <Button
           onClick= {newFields}>
             New Rule
@@ -66,10 +116,12 @@ state={
 
             <Editor
             name={"Editor"}
-            value={value}
+            value={editor}
             onChange={handleChange}
             />
-            <Markup/>
+            <Markup
+             dangerouslySetInnerHTML={convertToMarkup(editor)}
+            />
           </Document>
         </Column>
       </Container>
