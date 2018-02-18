@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Markup, Editor, Container, Column, Row, RuleInput, RuleLabel, StyleInput, Button, Document} from './styled'
-import hlsjs from 'highlight.js'
+import hljs from 'highlight.js'
 
 class App extends Component {
 
@@ -90,7 +90,7 @@ state={
 //and it will turn that into html Markup
   convertToMarkup = (text="") => {
     return {
-      __html: hlsjs.highlightAuto(text).value
+      __html: hljs.highlightAuto(text).value
     }
   }
 
@@ -133,12 +133,27 @@ language = (newRules) => {
     this.registerLanguage(nextState)
   }
 
+  prepareStyles = () => {
+      let {rules} = this.state
+      let styles = []
+      for (let i = 0; i < rules; i++) {
+        styles.push(`
+          .hljs-${this.state['name' + i]} {
+            ${this.state['style' + i]}
+          }
+        `)
+      }
+
+      let newStyles = "".concat(styles).replace(",", "")
+
+      return newStyles
+    }
 
 // want to hold the value of editor in state, since its textarea
   render() {
     //using destructoring
     let {editor} = this.state
-    let {handleChange, newFields, rules, convertToMarkup} = this
+    let {handleChange, newFields, rules, convertToMarkup, prepareStyles} = this
     return (
       <Container>
         <Column>
@@ -160,6 +175,7 @@ language = (newRules) => {
             onChange={handleChange}
             />
             <Markup
+             customStyles={prepareStyles()}
              dangerouslySetInnerHTML={convertToMarkup(editor)}
             />
           </Document>
