@@ -29,7 +29,7 @@ state={
 
   }
 
-  rules = () => {
+  get rules() {
      let {rules} = this.state
      let array = []
      let fields = ['name', 'begin', 'end']
@@ -163,7 +163,7 @@ language = (newRules) => {
     return (
       <Container>
         <Column>
-          {rules()}
+          {rules}
           <Button
           onClick= {newFields}>
             New Rule
