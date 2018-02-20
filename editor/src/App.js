@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {Markup, Editor, Container, Column, Row, RuleInput, RuleLabel, StyleInput, Button, Document} from './styled'
 import hljs from 'highlight.js'
-import {rando} from './utils'
+import {rando, getRandomPoem} from './utils'
 
 
-// console.log(rando.max)
-console.log(rando.color())
+// // console.log(rando.max)
+// console.log(rando.color())
 
 class App extends Component {
 
@@ -155,11 +155,26 @@ language = (newRules) => {
       return newStyles
     }
 
+    getRandomText = async () => {
+      try {
+        let poem = await getRandomPoem()
+        this.handleChange({
+          target: {
+            name: 'editor',
+            value: poem
+          }
+        })
+      } catch (error) {
+        console.log("getRandomPoem error", error)
+      }
+    }
+
 // want to hold the value of editor in state, since its textarea
   render() {
     //using destructoring
     let {editor} = this.state
-    let {handleChange, newFields, rules, convertToMarkup, prepareStyles} = this
+    let {handleChange, newFields, rules, convertToMarkup, prepareStyles,
+    getRandomText} = this
     return (
       <Container>
         <Column>
@@ -170,7 +185,8 @@ language = (newRules) => {
           </Button>
         </Column>
         <Column>
-          <Button>
+          <Button
+            onClick={getRandomText}>
             Random Text
           </Button>
           <Document>
