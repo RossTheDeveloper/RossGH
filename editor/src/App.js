@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import {Markup, Editor, Container, Column, Row, RuleInput, RuleLabel, StyleInput, Button, Document} from './styled'
 import hljs from 'highlight.js'
+import {rando} from './utils'
+
+
+console.log(rando)
+console.log(rando.randomInt(1, 10))
 
 class App extends Component {
 
@@ -133,6 +138,7 @@ language = (newRules) => {
     this.registerLanguage(nextState)
   }
 
+//pushes css as prop
   prepareStyles = () => {
       let {rules} = this.state
       let styles = []
@@ -170,7 +176,7 @@ language = (newRules) => {
           <Document>
 
             <Editor
-            name={"Editor"}
+            name={"editor"}
             value={editor}
             onChange={handleChange}
             />
