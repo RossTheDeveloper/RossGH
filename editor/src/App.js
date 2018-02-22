@@ -152,6 +152,10 @@ language = (newRules) => {
 
       let newStyles = "".concat(styles).replace(",", "")
 
+      while (newStyles.includes('random')){
+        newStyles = newStyles.replace('random', rando.color())
+      }
+
       return newStyles
     }
 
