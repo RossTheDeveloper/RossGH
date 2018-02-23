@@ -138,7 +138,7 @@ language = (newRules) => {
     this.registerLanguage(nextState)
   }
 
-//pushes css as prop
+//pushes css as prop - customStyles prop below in render
   prepareStyles = () => {
       let {rules} = this.state
       let styles = []
@@ -151,6 +151,7 @@ language = (newRules) => {
       }
 
       let newStyles = "".concat(styles).replace(",", "")
+      console.log(newStyles)
 
       while (newStyles.includes('random')){
         newStyles = newStyles.replace('random', rando.color())
