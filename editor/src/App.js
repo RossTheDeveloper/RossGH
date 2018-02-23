@@ -6,6 +6,7 @@ import {rando, getRandomPoem} from './utils'
 
 // // console.log(rando.max)
 // console.log(rando.color())
+//finished app
 
 class App extends Component {
 
