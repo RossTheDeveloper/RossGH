@@ -2,18 +2,59 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
+
+
+let Prod = (props) => {
+  const product = props.product
+    return(
+      <div>
+      {product}
+      </div>
+    )
+}
+
+let XyzPainter = (props) => {
+
+    const Prods = [];
+    props.products.forEach((each) => {
+      Prods.push(
+        <Prod
+        product={each.name}
+        key={each.name}
+        />
+      );
+    });
+
+    return(
+      <div> {Prods} </div>
+
+    )
+}
+
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      placeholder: ''
+    };
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+          <h1 className="App-title">Welcome </h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          rendering products
         </p>
-      </div>
+        //product array here =)
+        <XyzPainter products={this.props.products}/>
+        </div>
+
     );
   }
 }
