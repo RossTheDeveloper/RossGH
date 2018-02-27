@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+// import nike from './images/n1.png'
 
 
 
 
 let Prod = (props) => {
-  const product = props.product
+  const product = props.product.name
+  let img = props.product.img
+  console.log(img)
     return(
       <div className="Product-Wrap">
         <div className="Product-Image">
-          <img src={logo} alt="img test" width="42" height="42" />
+          <img src={img} alt="img test" width="170" height="170" />
         </div>
         {product}
       </div>
@@ -24,7 +26,7 @@ let Painter = (props) => {
     props.products.forEach((each) => {
       Prods.push(
         <Prod
-        product={each.name}
+        product={each}
         key={each.name}
         />
       );
