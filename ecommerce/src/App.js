@@ -5,16 +5,20 @@ import './App.css';
 
 
 
+
 let Prod = (props) => {
   const product = props.product
     return(
-      <div>
-      {product}
+      <div className="Product-Wrap">
+        <div className="Product-Image">
+          <img src={logo} alt="img test" width="42" height="42" />
+        </div>
+        {product}
       </div>
     )
 }
 
-let XyzPainter = (props) => {
+let Painter = (props) => {
 
     const Prods = [];
     props.products.forEach((each) => {
@@ -27,7 +31,7 @@ let XyzPainter = (props) => {
     });
 
     return(
-      <div> {Prods} </div>
+      <div className="Grid"> {Prods} </div>
 
     )
 }
@@ -52,7 +56,7 @@ class App extends Component {
           rendering products
         </p>
         //product array here =)
-        <XyzPainter products={this.props.products}/>
+        <Painter products={this.props.products}/>
         </div>
 
     );
