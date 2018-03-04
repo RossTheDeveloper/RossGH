@@ -37,15 +37,44 @@ let Painter = (props) => {
 
     )
 }
+//onchange needs to be placed here
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.change=this.change.bind(this)
+  }
 
+change(e){
+this.props.filterChange(e.target.value)
+}
+
+  render(){
+  return(
+    <form>
+    <input type="text" name="search" value={this.props.value}
+    onChange={this.change} />
+    </form>
+  )
+}
+}
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      placeholder: ''
+      value: ''
     };
+
+    this.handleChange=this.handleChange.bind(this)
   }
+
+
+
+handleChange(e){
+  this.setState({
+    value: e
+  })
+}
 
   render() {
     return (
@@ -54,6 +83,9 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome </h1>
         </header>
+        <Search
+        filterChange={this.handleChange}
+        value={this.state.value} />
         <p className="App-intro">
           rendering products
         </p>
