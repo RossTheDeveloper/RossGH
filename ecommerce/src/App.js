@@ -21,16 +21,19 @@ let Prod = (props) => {
 }
 
 let Painter = (props) => {
+    let text = props.text
 
     const Prods = [];
     props.products.forEach((each) => {
+     if(each.name.indexOf(text) !== -1){
       Prods.push(
         <Prod
         product={each}
         key={each.name}
         />
       );
-    });
+    }
+  });
 
     return(
       <div className="Grid"> {Prods} </div>
@@ -90,7 +93,9 @@ handleChange(e){
           rendering products
         </p>
         //product array here =)
-        <Painter products={this.props.products}/>
+        <Painter
+        products={this.props.products}
+        text={this.state.value}/>
         </div>
 
     );
