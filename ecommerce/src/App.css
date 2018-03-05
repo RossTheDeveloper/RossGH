@@ -14,10 +14,26 @@
   height: 150px;
   padding: 20px;
   color: red;
-  border: 10px solid red;
+  border: 10px solid lightblue;
+
 
 
 }
+
+/* .App-header {
+  background-color: black;
+  transition: background-color 1.5s ease;
+  height: 150px;
+  padding: 20px;
+  color: red;
+  border: 10px solid red;
+} */
+
+/*ending transition*/
+
+/* .App-header:hover {
+  background-color: green;
+} */
 
 .App-title {
   font-size: 1.5em;
@@ -31,6 +47,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+form{
+ background-color: #f2f2f2;
+ display:inline-block;
+}
+.searchForm{
+  margin: 10px;
+  height:30px;
+
+  /* border: .02px solid lightgrey; */
+}
+
+
 
 .Grid {
   display:grid;

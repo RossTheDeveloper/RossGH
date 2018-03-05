@@ -25,14 +25,17 @@ let Painter = (props) => {
 
     const Prods = [];
     props.products.forEach((each) => {
-     if(each.name.indexOf(text) !== -1){
+
+     if(each.name.indexOf(text) === -1){
+       return;}
+
       Prods.push(
         <Prod
         product={each}
         key={each.name}
         />
       );
-    }
+
   });
 
     return(
@@ -54,7 +57,7 @@ this.props.filterChange(e.target.value)
   render(){
   return(
     <form>
-    <input type="text" name="search" value={this.props.value}
+    <input className="searchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
     onChange={this.change} />
     </form>
   )
@@ -87,15 +90,15 @@ handleChange(e){
           <h1 className="App-title">Welcome </h1>
         </header>
         <Search
-        filterChange={this.handleChange}
-        value={this.state.value} />
+          filterChange={this.handleChange}
+          value={this.state.value} />
         <p className="App-intro">
           rendering products
         </p>
         //product array here =)
         <Painter
-        products={this.props.products}
-        text={this.state.value}/>
+          products={this.props.products}
+          text={this.state.value}/>
         </div>
 
     );

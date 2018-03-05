@@ -14,6 +14,14 @@ const PRODUCTS = [
   {name:"nike red2",img:require("./images/n7.png")},
   {name:"nike brand8",img:require("./images/n8.png")},
   {name:"nike brand9",img:require("./images/n9.png")},
+  {name:"nike brand2",img:require("./images/n2.png")},
+  {name:"nike brand3",img:require("./images/n3.png")},
+  {name:"nike brand4",img:require("./images/n4.png")},
+  {name:"nike brand5",img:require("./images/n5.png")},
+  {name:"nike red1",img:require("./images/n6.png")},
+  {name:"nike red2",img:require("./images/n7.png")},
+  {name:"nike brand8",img:require("./images/n8.png")},
+  {name:"nike brand9",img:require("./images/n9.png")}
 ];
 
 
