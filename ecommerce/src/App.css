@@ -1,12 +1,25 @@
 .App {
   text-align: center;
-  max-width:960px;
+  /* max-width:960px; */
   margin: 0 auto;
 }
+
+/* fix css- decide on header & app css, how to apply app css w/o
+distrupting header*/
+/*header needs to have a parent container
+with 100% width, might need for Header
+and content to have seperate css widths*/
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+}
+
+.Header-fix{
+  width:100%;
+  position:fixed;
+  top:0px;
+  border:1px solid red;
 }
 
 .App-header {
@@ -15,9 +28,12 @@
   padding: 20px;
   color: red;
   border: 10px solid lightblue;
+  max-width:960px;
+  margin:0 auto;
+}
 
-
-
+.Search{
+  margin-top:230px;
 }
 
 /* .App-header {

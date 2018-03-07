@@ -56,7 +56,7 @@ this.props.filterChange(e.target.value)
 
   render(){
   return(
-    <form>
+    <form className="Search">
     <input className="searchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
     onChange={this.change} />
     </form>
@@ -85,10 +85,12 @@ handleChange(e){
   render() {
     return (
       <div className="App">
+      <div className="Header-fix">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome </h1>
         </header>
+      </div>
         <Search
           filterChange={this.handleChange}
           value={this.state.value} />
