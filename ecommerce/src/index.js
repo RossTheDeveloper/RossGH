@@ -24,6 +24,13 @@ const PRODUCTS = [
   // {name:"nike brand9",price:50,img:require("./images/n9.png")}
 ];
 
+const ProdsA= PRODUCTS
+ProdsA.sort((a,b) => (a.price) - (b.price))
+console.log(ProdsA)
+
+const ProdsB= PRODUCTS
+ProdsB.sort((a,b) => (b.price) - (a.price))
+console.log(ProdsB)
 
 ReactDOM.render(<App products={PRODUCTS}/>, document.getElementById('root'));
 registerServiceWorker();

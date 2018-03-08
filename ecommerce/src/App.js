@@ -10,7 +10,7 @@ let Prod = (props) => {
   const product = props.product.name
   const price = props.product.price
   let img = props.product.img
-  console.log(img)
+
     return(
       <div className="Product-Wrap">
         <div className="Product-Image">
@@ -42,7 +42,7 @@ let Painter = (props) => {
         />
       );
 
-console.log(Prods)
+
   });
 
     return(
@@ -79,6 +79,7 @@ class Filter extends Component {
 render(){
   return(
     <select name="SelectFilter">
+    <option value="">- select -</option>
       <option value="test">test</option>
 
     </select>
