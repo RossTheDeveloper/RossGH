@@ -8,6 +8,7 @@ import './App.css';
 
 let Prod = (props) => {
   const product = props.product.name
+  const price = props.product.price
   let img = props.product.img
   console.log(img)
     return(
@@ -15,7 +16,12 @@ let Prod = (props) => {
         <div className="Product-Image">
           <img src={img} alt="img test" width="170" height="170" />
         </div>
-        {product}
+          <div className="Product-name">
+          {product}
+          </div>
+        <div className="Product-price">
+        $ {price}
+        </div>
       </div>
     )
 }
@@ -36,6 +42,7 @@ let Painter = (props) => {
         />
       );
 
+console.log(Prods)
   });
 
     return(
@@ -63,6 +70,23 @@ this.props.filterChange(e.target.value)
   )
 }
 }
+
+class Filter extends Component {
+  constructor(props){
+    super(props);
+  }
+
+render(){
+  return(
+    <select name="SelectFilter">
+      <option value="test">test</option>
+
+    </select>
+  )
+}
+
+}
+
 
 class App extends Component {
   constructor(props) {
@@ -94,6 +118,7 @@ handleChange(e){
         <Search
           filterChange={this.handleChange}
           value={this.state.value} />
+        <Filter />
         <p className="App-intro">
           rendering products
         </p>
