@@ -28,9 +28,21 @@ let Prod = (props) => {
 
 let Painter = (props) => {
     let text = props.text
-
+    let products = props.products
+    let selectValue = props.dropDown
     const Prods = [];
-    props.products.forEach((each) => {
+
+    if(selectValue === "ASC"){
+    products.sort((a,b) => (a.price) - (b.price))
+    console.log(products)}
+
+    if(selectValue === "DESC"){
+    products.sort((a,b) => (b.price) - (a.price))
+    console.log(products)}
+
+
+
+    products.forEach((each) => {
 
      if(each.name.indexOf(text) === -1){
        return;}
@@ -74,13 +86,21 @@ this.props.filterChange(e.target.value)
 class Filter extends Component {
   constructor(props){
     super(props);
+    this.change=this.change.bind(this)
   }
+
+change(e){
+ this.props.selectChange(e.target.value)
+}
 
 render(){
   return(
-    <select name="SelectFilter">
+    <select onChange={this.change}
+
+    name="SelectFilter">
     <option value="">- select -</option>
-      <option value="test">test</option>
+      <option value="ASC">Low to High</option>
+      <option value="DESC">High to Low</option>
 
     </select>
   )
@@ -93,10 +113,12 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: ''
+      value: '',
+      select:''
     };
 
     this.handleChange=this.handleChange.bind(this)
+    this.handleSelect=this.handleSelect.bind(this)
   }
 
 
@@ -104,6 +126,12 @@ class App extends Component {
 handleChange(e){
   this.setState({
     value: e
+  })
+}
+
+handleSelect(e){
+  this.setState({
+    select:e
   })
 }
 
@@ -119,14 +147,17 @@ handleChange(e){
         <Search
           filterChange={this.handleChange}
           value={this.state.value} />
-        <Filter />
+        <Filter
+        selectChange={this.handleSelect} />
         <p className="App-intro">
           rendering products
         </p>
         //product array here =)
         <Painter
           products={this.props.products}
-          text={this.state.value}/>
+          text={this.state.value}
+          dropDown ={this.state.select}
+          />
         </div>
 
     );
