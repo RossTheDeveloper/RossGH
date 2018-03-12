@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import {Route404} from './404.js'
 import registerServiceWorker from './registerServiceWorker';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const PRODUCTS = [
   {name:"nike brand1",price:50,img:require("./images/n1.png")},
@@ -32,5 +34,48 @@ const ProdsB= PRODUCTS
 ProdsB.sort((a,b) => (b.price) - (a.price))
 console.log(ProdsB)
 
-ReactDOM.render(<App products={PRODUCTS}/>, document.getElementById('root'));
+
+// <Router>
+// <Link to="/apper">App</Link>
+// <Route path="/apper" component={Apper} />
+// </Router>
+
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/apper">App</Link>
+        </li>
+      </ul>
+
+      <hr />
+
+      <Route exact path="/" component={Home} />
+      <Route path="/apper" component={Apper} />
+      <Route path="/*" component={Route404} />
+    </div>
+  </Router>
+);
+
+
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
+
+const Apper = () => (
+<App products={PRODUCTS}/>
+);
+
+//
+// <App products={PRODUCTS}/>
+
+
+
+ReactDOM.render(<BasicExample/>, document.getElementById('root'));
 registerServiceWorker();
