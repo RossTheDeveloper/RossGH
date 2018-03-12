@@ -3,7 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 // import nike from './images/n1.png'
 
-
+let Header = (props) => {
+  return (
+    <div className="Header-fix">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1 className="App-title">Welcome </h1>
+      </header>
+    </div>
+  )
+}
 
 
 let Prod = (props) => {
@@ -27,7 +36,7 @@ let Prod = (props) => {
 }
 
 let Painter = (props) => {
-    let text = props.text
+    let text = props.text.toLowerCase()
     let products = props.products
     let selectValue = props.dropDown
     const Prods = [];
@@ -44,7 +53,7 @@ let Painter = (props) => {
 
     products.forEach((each) => {
 
-     if(each.name.indexOf(text) === -1){
+     if(each.name.toLowerCase().indexOf(text) === -1){
        return;}
 
       Prods.push(
@@ -138,21 +147,12 @@ handleSelect(e){
   render() {
     return (
       <div className="App">
-      <div className="Header-fix">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome </h1>
-        </header>
-      </div>
+        <Header />
         <Search
           filterChange={this.handleChange}
           value={this.state.value} />
         <Filter
         selectChange={this.handleSelect} />
-        <p className="App-intro">
-          rendering products
-        </p>
-        //product array here =)
         <Painter
           products={this.props.products}
           text={this.state.value}
