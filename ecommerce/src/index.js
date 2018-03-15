@@ -40,42 +40,44 @@ console.log(ProdsB)
 // <Route path="/apper" component={Apper} />
 // </Router>
 
-const BasicExample = () => (
-  <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/apper">App</Link>
-        </li>
-      </ul>
-
-      <hr />
-
-      <Route exact path="/" component={Home} />
-      <Route path="/apper" component={Apper} />
-      <Route path="/*" component={Route404} />
-    </div>
-  </Router>
-);
+// zzzzzzzzzzz
 
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const Apper = () => (
-<App products={PRODUCTS}/>
-);
+// const BasicExample = () => (
+//   <Router>
+//     <div>
+//       <ul>
+//         <li>
+//           <Link to="/">App</Link>
+//         </li>
+//         <li>
+//           <Link to="/else">elsewhere</Link>
+//         </li>
+//       </ul>
+//
+//       <hr />
+//
+//       <Route exact path="/" component={Apper} />
+//       <Route path="/*" component={Route404} />
+//     </div>
+//   </Router>
+// );
+//
+//
+// const Home = () => (
+//   <div>
+//     <h2>Home</h2>
+//   </div>
+// );
+//
+// const Apper = () => (
+// <App products={PRODUCTS}/>
+// );
 
 //
 // <App products={PRODUCTS}/>
 
 
 
-ReactDOM.render(<BasicExample/>, document.getElementById('root'));
+ReactDOM.render(<App products={PRODUCTS}/>, document.getElementById('root'));
 registerServiceWorker();
