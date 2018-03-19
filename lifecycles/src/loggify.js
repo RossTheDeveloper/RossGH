@@ -1,11 +1,40 @@
 import React, {Component} from 'react'
 import styled from 'styled-components'
 
+/*
+
+  this.setState({someKey: newValue})
+
+  this.setState({someKey})
+
+  this.setState(
+    (prevState, props) => {
+      //perform any operations you need here
+      return {
+        //new object that represents changes to state
+      }
+    },
+    () => {
+      //my callback function
+    }
+  )
+
+
+*/
+
 export default function loggify(Wrapped) {
 
   let originals = {}
 
-  const methodsToLog = ["componentWillMount", "componentDidMount", "componentWillUnmount"]
+  const methodsToLog = [
+    "componentWillMount",
+    "componentDidMount",
+    "componentWillUnmount",
+    "componentWillReceiveProps",
+    "shouldComponentUpdate",
+    "componentWillUpdate",
+    "componentDidUpdate"
+  ]
 
   methodsToLog.forEach( (method) => {
 
@@ -21,13 +50,51 @@ export default function loggify(Wrapped) {
 
       console.groupCollapsed(`${Wrapped.displayName} called ${method}`)
 
+      if (
+            method === 'componentWillReceiveProps' ||
+                       'shouldComponentUpdate' ||
+                       'componentWillUpdate'
+      ) {
+        console.log("nextProps", args[0])
+      }
+
+      if (
+            method === 'shouldComponentUpdate' ||
+                       'componentWillUpdate'
+      ) {
+        console.log("nextState", args[1])
+      }
+
+      if (
+        method === "componentDidUpdate"
+      ) {
+        console.log("prevProps", args[0])
+        console.log("prevState", args[1])
+
+      }
+
       console.groupEnd()
 
       if (original) {
         original = original.bind(this)
-        original(...args)
+        return original(...args)
       }
 
+      if (
+        method === 'shouldComponentUpdate' &&
+        typeof original === 'undefined'
+      ) {
+        return true
+      }
+
+    }
+
+    Wrapped.prototype.setState = function (partialState, callback) {
+      console.groupCollapsed(`${Wrapped.displayName} setState`)
+      console.log('partialState', partialState)
+      console.log('callback', callback)
+      console.groupEnd()
+      this.updater.enqueueSetState(this, partialState, callback, 'setState')
     }
 
 
