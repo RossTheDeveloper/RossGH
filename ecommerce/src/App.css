@@ -90,10 +90,29 @@ form{
 
 .Product-Wrap{
   background: lightgrey;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  margin:5px;
+  transition: .3s;
+
 }
 
 .Product-Wrap:hover{
   background-color: silver;
+}
+
+.Product-Desc{
+  padding: 2px 15px;
+  background-color: lightgreen;
+  border-radius: 0 0 10px 10px;
+}
+
+.Product-price{
+  color:red;
+  font-weight: 800px;
+  font-size: 20px;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.40);
+
 }
 
 @media (max-width: 580px) {

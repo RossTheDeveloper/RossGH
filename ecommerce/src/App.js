@@ -15,7 +15,7 @@ let Header = (props) => {
 }
 
 
-let Prod = (props) => {
+let Product = (props) => {
   const product = props.product.name
   const price = props.product.price
   let img = props.product.img
@@ -25,11 +25,13 @@ let Prod = (props) => {
         <div className="Product-Image">
           <img src={img} alt="img test" width="170" height="170" />
         </div>
+        <div className="Product-Desc">
           <div className="Product-name">
-          {product}
+            {product}
           </div>
-        <div className="Product-price">
-        $ {price}
+          <div className="Product-price">
+            $ {price}
+          </div>
         </div>
       </div>
     )
@@ -57,7 +59,7 @@ let Painter = (props) => {
        return;}
 
       Prods.push(
-        <Prod
+        <Product
         product={each}
         key={each.name}
         />
