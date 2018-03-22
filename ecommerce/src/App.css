@@ -28,7 +28,7 @@ and content to have seperate css widths*/
 .App-header {
   box-sizing: border-box;
   background-color: #222;
-  height: 200px;
+  height: 150px;
   padding: 20px;
   color: red;
   border: 10px solid lightblue;
@@ -36,9 +36,9 @@ and content to have seperate css widths*/
   margin:0 auto;
 }
 
-.Search{
-  margin-top:230px;
-}
+
+
+
 
 /* .App-header {
   background-color: black;
@@ -55,9 +55,6 @@ and content to have seperate css widths*/
   background-color: green;
 } */
 
-.App-title {
-  font-size: 1.5em;
-}
 
 .App-intro {
   font-size: large;
@@ -68,20 +65,24 @@ and content to have seperate css widths*/
   to { transform: rotate(360deg); }
 }
 
-form{
- background-color: #f2f2f2;
- display:inline-block;
-}
+
 .searchForm{
-  margin: 10px;
-  height:30px;
+  display:inline-block;
+  height: 30px;
+  width:100%;
+  position:relative;
+  bottom:0;
+  left:0;
 
-  /* border: .02px solid lightgrey; */
 }
 
+.Select{
+  margin-top:200px;
+}
 
 
 .Grid {
+
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap:5px;

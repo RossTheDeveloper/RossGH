@@ -3,15 +3,41 @@ import logo from './logo.svg';
 import './App.css';
 // import nike from './images/n1.png'
 
-let Header = (props) => {
-  return (
+// let Header = (props) => {
+//   return (
+//     <div className="Header-fix">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//       </header>
+//     </div>
+//   )
+// }
+
+//onchange needs to be placed here
+class Search extends Component {
+  constructor(props) {
+    super(props);
+    this.change=this.change.bind(this)
+  }
+
+change(e){
+this.props.filterChange(e.target.value)
+}
+
+  render(){
+  return(
     <div className="Header-fix">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Welcome </h1>
+        <form className="Search">
+        <input className="searchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
+        onChange={this.change} />
+        </form>
       </header>
     </div>
+
   )
+}
 }
 
 
@@ -73,26 +99,7 @@ let Painter = (props) => {
 
     )
 }
-//onchange needs to be placed here
-class Search extends Component {
-  constructor(props) {
-    super(props);
-    this.change=this.change.bind(this)
-  }
 
-change(e){
-this.props.filterChange(e.target.value)
-}
-
-  render(){
-  return(
-    <form className="Search">
-    <input className="searchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
-    onChange={this.change} />
-    </form>
-  )
-}
-}
 
 class Filter extends Component {
   constructor(props){
@@ -106,8 +113,7 @@ change(e){
 
 render(){
   return(
-    <select onChange={this.change}
-
+    <select className="Select" onChange={this.change}
     name="SelectFilter">
     <option value="">- select -</option>
       <option value="ASC">Low to High</option>
@@ -145,11 +151,10 @@ handleSelect(e){
     select:e
   })
 }
-
+//search should be renamed to header and search
   render() {
     return (
       <div className="App">
-        <Header />
         <Search
           filterChange={this.handleChange}
           value={this.state.value} />
