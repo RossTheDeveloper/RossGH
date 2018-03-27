@@ -30,8 +30,8 @@ this.props.filterChange(e.target.value)
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <form className="Search">
-        <input className="searchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
-        onChange={this.change} />
+          <input className="SearchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
+          onChange={this.change} />
         </form>
       </header>
     </div>
