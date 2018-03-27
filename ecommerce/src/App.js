@@ -29,10 +29,10 @@ this.props.filterChange(e.target.value)
     <div className="Header-fix">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <form className="Search">
-          <input className="SearchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
-          onChange={this.change} />
-        </form>
+           <form>
+            <input className="SearchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
+            onChange={this.change} />
+          </form>
       </header>
     </div>
 
@@ -94,8 +94,12 @@ let Painter = (props) => {
 
   });
 
-    return(
-      <div className="Grid"> {Prods} </div>
+    return (
+
+        <div className="Grid">
+        {Prods}
+
+      </div>
 
     )
 }
@@ -160,12 +164,16 @@ handleSelect(e){
           value={this.state.value} />
         <Filter
         selectChange={this.handleSelect} />
-        <Painter
-          products={this.props.products}
-          text={this.state.value}
-          dropDown ={this.state.select}
-          />
+        <div className="content">
+            <div className="filters"> filters </div>
+            <Painter
+              products={this.props.products}
+              text={this.state.value}
+              dropDown ={this.state.select}
+            />
         </div>
+        <div className="footer"> footer </div>
+      </div>
 
     );
   }

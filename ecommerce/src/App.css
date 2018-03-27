@@ -1,20 +1,11 @@
-.App {
-  text-align: center;
-  max-width:960px;
-  margin: 0 auto;
-  border:1px green solid;
-
+.App{
+  background-color: lightblue;
+  min-height:1680px;
 }
-
-/* fix css- decide on header & app css, how to apply app css w/o
-distrupting header*/
-/*header needs to have a parent container
-with 100% width, might need for Header
-and content to have seperate css widths*/
-
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
+  position:relative;
 }
 
 .Header-fix{
@@ -30,32 +21,23 @@ and content to have seperate css widths*/
   background-color: #222;
   height: 150px;
   color: red;
-  border: 10px solid lightblue;
-  max-width:960px;
+  text-align: center;
+  max-width:1280px;
+  border:10px green solid;
   margin:0 auto;
   position:relative;
 }
-/* .Search{
-  display:inline-block;
-  height: 30px;
-  width:100%;
-  position:relative;
-  bottom:0;
-  left:0;
-} */
 
-/* .Search{
-  position:relative;
-  left:0;
-  top:
-} */
+
 
 .SearchForm{
-  border:3px solid blue;
-  width:98.95%;
-  position:absolute;
-  left:0;
+  display:inline-block;
+  border:3px solid red;
+  position: absolute;
+  height:30px;
   bottom:0;
+  left:0;
+  right:0;
 }
 
 
@@ -91,14 +73,26 @@ and content to have seperate css widths*/
   margin-top:200px;
 }
 
+.content {
+  display:grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap:5px;
+  text-align: center;
+  max-width:960px;
+  margin: 0 auto;
+  border:20px green solid;
+}
+
+.filters{
+  border:5px solid red;
+}
+
 
 .Grid {
-  border:2px solid red;
-
+  border:2px solid yellow;
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap:5px;
-
 }
 
 .Product-Wrap{
@@ -126,6 +120,18 @@ and content to have seperate css widths*/
   font-size: 20px;
   text-shadow: 0 0 5px rgba(0, 0, 0, 0.40);
 
+}
+
+.footer{
+  box-sizing: border-box;
+  background-color: #222;
+  height: 300px;
+  color: red;
+  text-align: center;
+  max-width:960px;
+  border:10px green solid;
+  margin:30px auto;
+  position:relative;
 }
 
 @media (max-width: 580px) {
