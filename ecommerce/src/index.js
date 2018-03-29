@@ -7,15 +7,15 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const PRODUCTS = [
-  {name:"nike brand1",price:50,img:require("./images/n1.png")},
-  {name:"nike brand2",price:70,img:require("./images/n2.png")},
-  {name:"nike brand3",price:100,img:require("./images/n3.png")},
-  {name:"nike brand4",price:10,img:require("./images/n4.png")},
-  {name:"nike brand5",price:90,img:require("./images/n5.png")},
-  {name:"nike red1",price:80,img:require("./images/n6.png")},
-  {name:"nike red2",price:40,img:require("./images/n7.png")},
-  {name:"nike brand8",price:53,img:require("./images/n8.png")},
-  {name:"nike brand9",price:99,img:require("./images/n9.png")}
+  {name:"a",price:50,img:require("./images/n1.png")},
+  {name:"b",price:70,img:require("./images/n2.png")},
+  {name:"c",price:100,img:require("./images/n3.png")},
+  {name:"d",price:10,img:require("./images/n4.png")},
+  {name:"e",price:90,img:require("./images/n5.png")},
+  {name:"f",price:80,img:require("./images/n6.png")},
+  {name:"g",price:40,img:require("./images/n7.png")},
+  {name:"h",price:53,img:require("./images/n8.png")},
+  {name:"i",price:99,img:require("./images/n9.png")}
   // {name:"nike brand2",price:50,img:require("./images/n2.png")},
   // {name:"nike brand3",price:50,img:require("./images/n3.png")},
   // {name:"nike brand4",price:50,img:require("./images/n4.png")},

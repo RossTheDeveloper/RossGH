@@ -21,6 +21,14 @@ let Painter = (props) => {
     products.sort((a,b) => (b.price) - (a.price))
     console.log(products)}
 
+    if(selectValue === "Alphabetical"){
+    products.sort(function(a, b){
+    if(a.name < b.name) return -1;
+    if(a.name > b.name) return 1;
+    return 0;
+    })
+    console.log(products)}
+
     products.forEach((each) => {
 
      if(each.name.toLowerCase().indexOf(text) === -1){
