@@ -29,6 +29,14 @@ let Painter = (props) => {
     })
     console.log(products)}
 
+    if(selectValue === "New Arrivals"){
+    products.sort(function(a, b){
+    if(new Date(a.arrived) < new Date(b.arrived)) return 1;
+    if(new Date(a.arrived) > new Date(b.arrived)) return -1;
+    return 0;
+    })
+    console.log(products)}
+
     products.forEach((each) => {
 
      if(each.name.toLowerCase().indexOf(text) === -1){
@@ -105,6 +113,7 @@ class App extends Component {
 
         <div className="footer"> footer
           <img src={window.location.origin + '/images/n1.png'} className="App-logo" alt="logo" />
+          <div> {new Date("2015-03-25").toString()} </div>
           </div>
 
       </div>
