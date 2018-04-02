@@ -8,7 +8,6 @@ body{
   margin-bottom: 75px;
   display:flex;
   flex-flow: row wrap;
-  width:600px;
   margin:0 auto;
 }
 
@@ -18,10 +17,20 @@ body{
   margin:20px;
   color:white;
   padding:3px;
-  width:60px;
 
 }
 
+.App1 .div2 {
+  flex: 2 1 0;
+}
+
+.App2 .div2 {
+  flex: 2 1 auto;
+}
+
+.div{
+  flex:1;
+}
 
 
 
