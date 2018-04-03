@@ -20,8 +20,8 @@ class App extends Component {
             <div className="div div3"> 3 </div>
               <div className="div div4"> 4 </div>
                 <div className="div div4"> 5</div>
-                  <div className="div div4"> 6 </div>
-                    <div className="div div4"> 7 </div>
+                
+
 
 
 
