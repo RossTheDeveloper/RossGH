@@ -21,11 +21,19 @@ this.props.filterChange(e.target.value)
   return(
     <div className="Header-fix">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <form>
-          <input className="SearchForm" type="text" name="search" placeholder="Search..." value={this.props.value}
+    <ul className="flexList">
+    <li><a href="#" title="item1">item 1</a></li>
+    <li><a href="#" title="item2">item 2</a></li>
+    <li><a href="#" title="item3">item 3</a></li>
+    </ul>
+
+    <img src={logo} className="App-logo" alt="logo"/>
+
+        <form className="SearchForm">
+          <input  type="search" name="search" placeholder="Search..." value={this.props.value}
           onChange={this.change} />
         </form>
+
       </header>
     </div>
 
