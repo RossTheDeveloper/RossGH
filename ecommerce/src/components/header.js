@@ -21,6 +21,7 @@ this.props.filterChange(e.target.value)
   return(
     <div className="Header-fix">
       <header className="App-header">
+
     <ul className="flexList">
     <li><a href="#" title="item1">item 1</a></li>
     <li><a href="#" title="item2">item 2</a></li>
