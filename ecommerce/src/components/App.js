@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './header';
-
-
 import Main from './Main';
 
 // <div className="content">
@@ -58,7 +56,7 @@ class App extends Component {
           filterChange={this.handleChange}
           value={this.state.value}
           />
-          
+
         <div className="space"> </div>
 
         <Main
@@ -67,19 +65,6 @@ class App extends Component {
           text={this.state.value}
           dropDown ={this.state.select}
           />
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
