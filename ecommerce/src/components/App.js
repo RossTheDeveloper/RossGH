@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Header from './header';
+import Nav from './header';
 import Main from './Main';
 
 // <div className="content">
@@ -52,7 +52,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header
+        <Nav
           filterChange={this.handleChange}
           value={this.state.value}
           />

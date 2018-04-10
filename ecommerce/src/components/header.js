@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Search from './Search'
+
 // import {Link} from 'react-router-dom'
 
 
@@ -14,7 +16,7 @@ import logo from './logo.svg';
 
 
 
-class Header extends Component {
+class Nav extends Component {
   constructor(props) {
     super(props);
     this.change=this.change.bind(this)
@@ -37,10 +39,9 @@ this.props.filterChange(e.target.value)
 
     <img src={logo} className="App-logo" alt="logo"/>
 
-        <form className="SearchForm">
-          <input  type="search" name="search" placeholder="Search..." value={this.props.value}
-          onChange={this.change} />
-        </form>
+    <Search value={this.props.value}
+      change={this.change} />
+
 
       </header>
     </div>
@@ -50,4 +51,4 @@ this.props.filterChange(e.target.value)
 }
 
 
-export default Header;
+export default Nav;
