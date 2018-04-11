@@ -13,7 +13,7 @@ change(e){
 render(){
   return(
 
-    <div>
+    <div className="rightTop">
     <label for="SelectFilter"> <strong> Sort By </strong> </label>
     <select className="Select" onChange={this.change}
     name="SelectFilter">

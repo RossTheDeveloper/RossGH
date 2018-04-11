@@ -1,29 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Nav from './header';
+import Nav from './Nav';
 import Main from './Main';
 
-// <div className="content">
-//
-//     <div className="left filters">
-//       <div className="gender"> q </div>
-//       <div className="gender"> q </div>
-//       <div className="gender"> q </div>
-//     </div>
-//
-//     <div className="right">
-//       <div className="rightTop">
-//
-//         <Select
-//         selectChange={this.handleSelect} />
-//       </div>
-//       <Painter
-//         products={this.props.products}
-//         text={this.state.value}
-//         dropDown ={this.state.select}
-//     />
-//     </div>
-// </div>
+// review main component stucture
 
 class App extends Component {
   constructor(props) {

@@ -8,7 +8,7 @@ let Product = (props) => {
     return(
       <div className="Product-Wrap">
         <div className="Product-Image">
-          <img src={img} alt="img test" width="170" height="170" />
+          <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
         </div>
         <div className="Product-Desc">
           <div className="Product-name">
