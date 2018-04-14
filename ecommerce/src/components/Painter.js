@@ -32,6 +32,15 @@ let Painter = (props) => {
     })
     console.log(products)}
 
+
+
+
+
+
+
+
+
+
     products.forEach((each) => {
 
      if(each.name.toLowerCase().indexOf(text) === -1){
