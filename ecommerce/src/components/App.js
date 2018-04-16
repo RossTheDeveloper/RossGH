@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Main from './Main';
 
 // review main component stucture
-//learning redux
+//learning store
 
 class App extends Component {
   constructor(props) {
