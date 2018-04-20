@@ -4,19 +4,21 @@ import Product from './Product';
 
 let Painter = (props) => {
     let text = props.text.toLowerCase()
-    let products = props.products
+    let products
     let selectValue = props.dropDown
     let gender = props.gender
     const Prods = [];
 
-    var rew;
-    console.log(rew)
 
     if(gender ==='male'){
-      rew = products.filter( x => x.gender !== 'male')
+      products = props.products.filter( x => x.gender === 'male')
     }
 
-    console.log(rew)
+    if(gender ==='female'){
+      products = props.products.filter( x => x.gender === 'female')
+    }
+
+
 
     if(selectValue === "ASC"){
     products.sort((a,b) => (a.price) - (b.price))
