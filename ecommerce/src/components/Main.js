@@ -4,7 +4,7 @@ import Painter from './Painter';
 import Left from './Left';
 
 
-// figure out classnames for left 
+// figure out classnames for left
 
 let Main = (props) => (
 
@@ -29,6 +29,7 @@ let Main = (props) => (
         products={props.products}
         text={props.text}
         dropDown ={props.dropDown}
+        gender = {props.gender}
       />
 
 

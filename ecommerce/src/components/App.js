@@ -11,7 +11,8 @@ class App extends Component {
     super(props);
     this.state = {
       value: '',
-      select:''
+      select:'',
+      gender:'male'
     };
 
     this.handleChange=this.handleChange.bind(this)
@@ -45,6 +46,7 @@ class App extends Component {
           products={this.props.products}
           text={this.state.value}
           dropDown ={this.state.select}
+          gender = {this.state.gender}
           />
 
 
