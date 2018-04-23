@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Main from './Main';
 
 // review main component stucture
-//learning action creators, thunks
+//learning containers
 
 class App extends Component {
   constructor(props) {
