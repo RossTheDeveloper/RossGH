@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Main from './Main';
 
 // review main component stucture
-//learning containers
+//learning react redux
 
 class App extends Component {
   constructor(props) {
