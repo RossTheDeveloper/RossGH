@@ -10,7 +10,7 @@ class Left extends Component {
 
   maleClick(e){
     e.preventDefault();
-    alert(e.target.id)
+    this.props.male("male")
   }
 
   femaleClick(e){

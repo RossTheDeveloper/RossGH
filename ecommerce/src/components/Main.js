@@ -11,7 +11,8 @@ let Main = (props) => (
 <div className="content">
 
 
-     <Left />
+     <Left
+      male={props.male}/>
 
 
 
