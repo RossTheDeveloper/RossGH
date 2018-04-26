@@ -12,10 +12,10 @@ let Painter = (props) => {
 
     if(gender ==='male'){
       products = props.products.filter( x => x.gender === 'male')
-    }
-
-    if(gender ==='female'){
+    } else if(gender ==='female'){
       products = props.products.filter( x => x.gender === 'female')
+    } else {
+      products = props.products
     }
 
 

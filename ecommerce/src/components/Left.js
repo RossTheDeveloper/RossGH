@@ -15,7 +15,7 @@ class Left extends Component {
 
   femaleClick(e){
     e.preventDefault();
-    alert("will this work")
+    this.props.male("female")
   }
 
 
@@ -27,7 +27,7 @@ render() {
         <div className="xx1">GENDER</div>
         <div className="xx2">
         <a href="#malek" onClick={this.maleClick}>Male</a>
-        <a href="#" onClick={this.maleClick}>Female</a>
+        <a href="#" onClick={this.femaleClick}>Female</a>
         </div>
       </div>
 

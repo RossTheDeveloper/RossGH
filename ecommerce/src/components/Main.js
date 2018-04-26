@@ -12,7 +12,8 @@ let Main = (props) => (
 
 
      <Left
-      male={props.male}/>
+      male={props.male}
+      male={props.female}/>
 
 
 

@@ -12,12 +12,12 @@ class App extends Component {
     this.state = {
       value: '',
       select:'',
-      gender:'female'
+      gender:''
     };
 
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
-    this.maleClick=this.maleClick.bind(this)
+    this.genderClick=this.genderClick.bind(this)
   }
 
   handleChange(e){
@@ -32,7 +32,7 @@ class App extends Component {
     })
   }
 
-  maleClick(e){
+  genderClick(e){
     this.setState({
       gender: e
     })
@@ -54,7 +54,8 @@ class App extends Component {
           text={this.state.value}
           dropDown ={this.state.select}
           gender = {this.state.gender}
-          male={this.maleClick}
+          male={this.genderClick}
+          female={this.genderClick}
           />
 
 
