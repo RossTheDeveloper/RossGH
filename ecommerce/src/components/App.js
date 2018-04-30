@@ -4,7 +4,7 @@ import Nav from './Nav';
 import Main from './Main';
 
 // review main component stucture
-//contact site planning 
+//site wireframe
 
 class App extends Component {
   constructor(props) {
