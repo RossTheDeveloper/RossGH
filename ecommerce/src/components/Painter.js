@@ -7,15 +7,22 @@ let Painter = (props) => {
     let products
     let selectValue = props.dropDown
     let gender = props.gender
+    let variety = props.category
     const Prods = [];
 
+
+    if(variety ==='running'){
+      products = props.products.filter( x => x.variety === 'running')
+    } else if(variety ==='casual'){
+      products = props.products.filter( x => x.variety === 'casual')
+    } else {
+      products = props.products
+    }
 
     if(gender ==='male'){
       products = props.products.filter( x => x.gender === 'male')
     } else if(gender ==='female'){
       products = props.products.filter( x => x.gender === 'female')
-    } else {
-      products = props.products
     }
 
 

@@ -5,6 +5,7 @@ import Main from './Main';
 
 // review main component stucture
 //site wireframe
+// when we pass down state , maybe we should pass down all of it for painter
 
 class App extends Component {
   constructor(props) {
@@ -12,12 +13,14 @@ class App extends Component {
     this.state = {
       value: '',
       select:'',
-      gender:''
+      gender:'',
+      variety:''
     };
 
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
     this.genderClick=this.genderClick.bind(this)
+    this.varietyClick=this.varietyClick.bind(this)
   }
 
   handleChange(e){
@@ -38,6 +41,12 @@ class App extends Component {
     })
   }
 
+  varietyClick(e){
+    this.setState({
+      variety: e
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -54,8 +63,10 @@ class App extends Component {
           text={this.state.value}
           dropDown ={this.state.select}
           gender = {this.state.gender}
-          male={this.genderClick}
-          female={this.genderClick}
+          sex={this.genderClick}
+          category={this.state.variety}
+          variety={this.varietyClick}
+
           />
 
 

@@ -12,8 +12,8 @@ let Main = (props) => (
 
 
      <Left
-      male={props.male}
-      male={props.female}/>
+      sex={props.sex}
+      variety={props.variety}/>
 
 
 
@@ -32,6 +32,7 @@ let Main = (props) => (
         text={props.text}
         dropDown ={props.dropDown}
         gender = {props.gender}
+        category={props.category}
       />
 
 

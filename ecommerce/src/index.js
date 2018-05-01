@@ -7,15 +7,15 @@ import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 const PRODUCTS = [
-  {name:"a",price:50,gender:"female",arrived:"2015-03-27",img:"/images/n1.png"},
-  {name:"b",price:70,gender:"male",arrived:"2015-03-29",img:"/images/n2.png"},
-  {name:"c",price:100,gender:"female",arrived:"2018-03-29",img:"/images/n3.png"},
-  {name:"d",price:10,gender:"male",arrived:"2018-03-27",img:"/images/n4.png"},
-  {name:"e",price:90,gender:"female",arrived:"2018-03-25",img:"/images/n5.png"},
-  {name:"f",price:80,gender:"male",arrived:"2017-03-28",img:"/images/n6.png"},
-  {name:"g",price:40,gender:"female",arrived:"2017-03-25",img:"/images/n7.png"},
-  {name:"h",price:53,gender:"male",arrived:"2017-03-24",img:"/images/n8.png"},
-  {name:"i",price:99,gender:"female",arrived:"2017-03-23",img:"/images/n9.png"}
+  {name:"a",price:50,variety:"casual",gender:"female",arrived:"2015-03-27",img:"/images/n1.png"},
+  {name:"b",price:70,variety:"casual",gender:"male",arrived:"2015-03-29",img:"/images/n2.png"},
+  {name:"c",price:95,variety:"casual",gender:"female",arrived:"2018-03-29",img:"/images/n3.png"},
+  {name:"d",price:10,variety:"casual",gender:"male",arrived:"2018-03-27",img:"/images/n4.png"},
+  {name:"e",price:90,variety:"casual",gender:"female",arrived:"2018-03-25",img:"/images/n5.png"},
+  {name:"f",price:80,variety:"running",gender:"male",arrived:"2017-03-28",img:"/images/n6.png"},
+  {name:"g",price:40,variety:"running",gender:"female",arrived:"2017-03-25",img:"/images/n7.png"},
+  {name:"h",price:53,variety:"running",gender:"male",arrived:"2017-03-24",img:"/images/n8.png"},
+  {name:"i",price:99,variety:"running",gender:"female",arrived:"2017-03-23",img:"/images/n9.png"}
 
   // {name:"nike brand2",price:50,img:"/images/n2.png"},
   // {name:"nike brand3",price:50,img:"/images/n3.png"},

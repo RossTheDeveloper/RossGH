@@ -6,17 +6,30 @@ class Left extends Component {
     super(props);
     this.maleClick=this.maleClick.bind(this)
     this.femaleClick=this.femaleClick.bind(this)
+    this.runClick=this.runClick.bind(this)
+    this.casualClick=this.casualClick.bind(this)
   }
 
   maleClick(e){
     e.preventDefault();
-    this.props.male("male")
+    this.props.sex("male")
   }
 
   femaleClick(e){
     e.preventDefault();
-    this.props.male("female")
+    this.props.sex("female")
   }
+
+  runClick(e){
+    e.preventDefault();
+    this.props.variety("running")
+  }
+
+  casualClick(e){
+    e.preventDefault();
+    this.props.variety("casual")
+  }
+
 
 
 render() {
@@ -34,8 +47,8 @@ render() {
       <div className="xx">
         <div className="xx1">TYPE</div>
         <div className="xx2">
-        <a href="#">Running</a>
-        <a href="#">Casual</a>
+        <a href="#" onClick={this.runClick}>Running</a>
+        <a href="#" onClick={this.casualClick}>Casual</a>
         </div>
       </div>
 
