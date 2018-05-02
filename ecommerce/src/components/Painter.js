@@ -4,6 +4,7 @@ import Product from './Product';
 
 let Painter = (props) => {
     let text = props.text.toLowerCase()
+    let products0
     let products
     let selectValue = props.dropDown
     let gender = props.gender
@@ -12,17 +13,20 @@ let Painter = (props) => {
 
 
     if(variety ==='running'){
-      products = props.products.filter( x => x.variety === 'running')
+      products0 = props.products.filter( x => x.variety === 'running')
     } else if(variety ==='casual'){
-      products = props.products.filter( x => x.variety === 'casual')
+      products0 = props.products.filter( x => x.variety === 'casual')
     } else {
-      products = props.products
+      products0 = props.products
     }
 
+
     if(gender ==='male'){
-      products = props.products.filter( x => x.gender === 'male')
+      products = products0.filter( x => x.gender === 'male')
     } else if(gender ==='female'){
-      products = props.products.filter( x => x.gender === 'female')
+      products = products0.filter( x => x.gender === 'female')
+    } else {
+      products = products0
     }
 
 
