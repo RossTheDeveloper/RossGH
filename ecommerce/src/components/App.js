@@ -14,13 +14,15 @@ class App extends Component {
       value: '',
       select:'',
       gender:'',
-      variety:''
+      variety:'',
+      color:''
     };
 
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
     this.genderClick=this.genderClick.bind(this)
     this.varietyClick=this.varietyClick.bind(this)
+    this.colorClick=this.colorClick.bind(this)
   }
 
   handleChange(e){
@@ -47,6 +49,12 @@ class App extends Component {
     })
   }
 
+  colorClick(e){
+    this.setState({
+      color: e
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -66,6 +74,8 @@ class App extends Component {
           sex={this.genderClick}
           category={this.state.variety}
           variety={this.varietyClick}
+          colorClick={this.colorClick}
+          color={this.state.color}
 
           />
 

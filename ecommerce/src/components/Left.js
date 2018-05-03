@@ -8,6 +8,7 @@ class Left extends Component {
     this.femaleClick=this.femaleClick.bind(this)
     this.runClick=this.runClick.bind(this)
     this.casualClick=this.casualClick.bind(this)
+    this.colorClick=this.colorClick.bind(this)
   }
 
   maleClick(e){
@@ -30,6 +31,11 @@ class Left extends Component {
     this.props.variety("casual")
   }
 
+  colorClick(e){
+    e.preventDefault();
+    this.props.color(e.target.alt)
+  }
+
 
 
 render() {
@@ -39,7 +45,7 @@ render() {
       <div className="xx">
         <div className="xx1">GENDER</div>
         <div className="xx2">
-        <a href="#malek" onClick={this.maleClick}>Male</a>
+        <a href="#malek" onClick={this.maleClick} alt="yt">Male</a>
         <a href="#" onClick={this.femaleClick}>Female</a>
         </div>
       </div>
@@ -55,8 +61,11 @@ render() {
       <div className="xx">
         <div className="xx1">COLOR</div>
         <div className="xx2">
-        <a href="#">Male</a>
-        <a href="#">Female</a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/red.png'} alt="red" /></a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/blue.png'} alt="blue" /></a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/green.png'} alt="green" /></a>
+
+
         </div>
       </div>
     </div>
