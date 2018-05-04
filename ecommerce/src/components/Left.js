@@ -60,10 +60,13 @@ render() {
 
       <div className="xx">
         <div className="xx1">COLOR</div>
-        <div className="xx2">
+        <div className="xx3">
         <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/red.png'} alt="red" /></a>
         <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/blue.png'} alt="blue" /></a>
         <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/green.png'} alt="green" /></a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/white.png'} alt="white" /></a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/black.png'} alt="black" /></a>
+        <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/orange.png'} alt="orange" /></a>
 
 
         </div>
