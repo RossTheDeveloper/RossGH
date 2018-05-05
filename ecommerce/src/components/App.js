@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import Nav from './Nav';
 import Main from './Main';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Contact from './Contact';
+import About from './About';
 
 // review main component stucture
 //site wireframe
@@ -57,43 +60,50 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Nav
-          filterChange={this.handleChange}
-          value={this.state.value}
-          />
+      <Router>
+        <div className="App">
+          <Nav
+            filterChange={this.handleChange}
+            value={this.state.value}
+            />
 
-        <div className="space"> </div>
-
-        <Main
-          selectChange={this.handleSelect}
-          products={this.props.products}
-          text={this.state.value}
-          dropDown ={this.state.select}
-          gender = {this.state.gender}
-          sex={this.genderClick}
-          category={this.state.variety}
-          variety={this.varietyClick}
-          colorClick={this.colorClick}
-          color={this.state.color}
-
-          />
+          <div className="space"> </div>
 
 
 
+            <Switch>
+              <Route path="/contact" component={Contact}/>
+              <Route path="/about" component={About}/>
+              <Route exact path="/" render={(props) => (
+                <Main
+                  selectChange={this.handleSelect}
+                  products={this.props.products}
+                  text={this.state.value}
+                  dropDown ={this.state.select}
+                  gender = {this.state.gender}
+                  sex={this.genderClick}
+                  category={this.state.variety}
+                  variety={this.varietyClick}
+                  colorClick={this.colorClick}
+                  color={this.state.color}
+
+                  />
+              )} />
+            </Switch>
 
 
 
 
 
 
-        <div className="footer"> footer
-          <img src={window.location.origin + '/images/n1.png'} className="App-logo" alt="logo" />
-          <div> {new Date("2015-03-25").toString()} </div>
-          </div>
 
-      </div>
+          <div className="footer"> footer
+            <img src={window.location.origin + '/images/n1.png'} className="App-logo" alt="logo" />
+            <div> {new Date("2015-03-25").toString()} </div>
+            </div>
 
+        </div>
+      </Router>
 
     );
   }

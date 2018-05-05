@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import Search from './Search'
+import { Link } from 'react-router-dom';
 
 // import {Link} from 'react-router-dom'
 
@@ -10,11 +11,6 @@ import Search from './Search'
     // <li><a href="/#" title="item2">item 2</Link></li>
     // <li><a href="/#" title="item3">item 3</Link></li>
     // </ul>
-
-
-
-
-
 
 class Nav extends Component {
   constructor(props) {
@@ -32,9 +28,9 @@ this.props.filterChange(e.target.value)
       <header className="App-header">
 
     <ul className="flexList">
-    <li><a href="/about" title="About">About</a></li>
-    <li><a href="/#" title="item2">item 2</a></li>
-    <li><a href="/#" title="item3">item 3</a></li>
+    <li><Link to="/">Home</Link></li>
+    <li><Link to="/about">About</Link></li>
+    <li><Link to="/contact">Contact</Link></li>
     </ul>
 
     <img src={logo} className="App-logo" alt="logo"/>

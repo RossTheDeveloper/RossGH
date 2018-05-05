@@ -1,10 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navigation from './linkers'
+import Contact from './Contact'
+import App2 from './Apper'
+
+
+    // <Route path=“/contact” component={Contact}/>
+
+
+
+
+
 
 class App extends Component {
+  constructor(props) {
+   super(props);
+   this.state ={
+     name: "tommy"
+   }
+ }
+
+
   render() {
-    return (<h1>hi</h1>)
+    return (
+      <Router>
+      <div>
+      <Navigation />
+
+      <Switch>
+      <Route path="/about" component={App2}/>
+      <Route path="/" render={(props) => (
+             <Contact namer={this.state.name} />
+           )} />
+
+
+
+      </Switch>
+      </div>
+
+      </Router>
+    )
+
 
   }
 }
