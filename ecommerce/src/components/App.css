@@ -1,7 +1,8 @@
 
   .App{
-  background-color: lightblue;
+  background-color: black;
   min-height:1680px;
+  color:#CDD0D5;
 }
 
 li {
@@ -10,7 +11,7 @@ li {
 
 a{
   text-decoration: none;
-  color:white;
+  color:#CDD0D5;
 }
 
 /* --------------------------------------------------
@@ -32,7 +33,7 @@ a{
   align-items: center;
 
   box-sizing: border-box;
-  background-color: #222;
+  background-color: #2B1F36;
   color: red;
   text-align: center;
   max-width:1280px;
@@ -83,18 +84,31 @@ ul li{
   flex-flow: column;
   height:350px;
   margin-right:5px;
+
+  color:white;
 }
 
 .filters .xx {
-border:1px solid blue;
 flex:1;
 display:flex;
 flex-flow: column;
 justify-content: space-around;
+background-color: #38363b;
+margin-top: 5px;
 }
 
 .xx1{
+  background: #110E1F;
+  height:30px;
   margin-bottom: 10px;
+  border:.02px solid #2B1F36;
+}
+
+.xx1 div{
+  position:relative;
+  top:8px;
+  margin-bottom: 10px;
+
 }
 
 .xx2 {
@@ -137,7 +151,7 @@ justify-content: space-around;
 
 .Product-Wrap{
   box-sizing: border-box;
-  background: lightgrey;
+  background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: .3s;
@@ -153,7 +167,7 @@ justify-content: space-around;
 
 .Product-Desc{
   padding: 2px 15px;
-  background-color: lightgreen;
+  background-color: #2B1F36;
   border-radius: 0 0 10px 10px;
 }
 

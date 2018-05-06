@@ -43,7 +43,7 @@ render() {
   return(
     <div className="left filters">
       <div className="xx">
-        <div className="xx1">GENDER</div>
+        <div className="xx1"><div>GENDER</div></div>
         <div className="xx2">
         <a href="#malek" onClick={this.maleClick} alt="yt">Male</a>
         <a href="#" onClick={this.femaleClick}>Female</a>
@@ -51,7 +51,7 @@ render() {
       </div>
 
       <div className="xx">
-        <div className="xx1">TYPE</div>
+        <div className="xx1"><div>TYPE</div></div>
         <div className="xx2">
         <a href="#" onClick={this.runClick}>Running</a>
         <a href="#" onClick={this.casualClick}>Casual</a>
@@ -59,7 +59,7 @@ render() {
       </div>
 
       <div className="xx">
-        <div className="xx1">COLOR</div>
+        <div className="xx1"><div>COLOR</div></div>
         <div className="xx3">
         <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/red.png'} alt="red" /></a>
         <a onClick={this.colorClick} href="#"><img src={window.location.origin + '/colors/blue.png'} alt="blue" /></a>
