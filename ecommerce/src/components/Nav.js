@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import logo from './jackal.png';
 import Search from './Search'
 import { Link } from 'react-router-dom';
 

@@ -97,9 +97,8 @@ class App extends Component {
 
 
 
-          <div className="footer"> footer
-            <img src={window.location.origin + '/images/n1.png'} className="App-logo" alt="logo" />
-            <div> {new Date("2015-03-25").toString()} </div>
+          <div className="footer">
+            <img src={window.location.origin + '/images/v4b.png'} height="300" width="300" alt="footerPhoto" />
             </div>
 
         </div>

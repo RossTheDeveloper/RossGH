@@ -31,7 +31,6 @@ a{
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
-
   box-sizing: border-box;
   background-color: #2B1F36;
   color: red;
@@ -185,15 +184,15 @@ margin-top: 5px;
 
 .footer{
   box-sizing: border-box;
-  background-color: #222;
-  height: 300px;
+  background-image: linear-gradient(#1C1016, black, #1C1016);
+  color:white;
   color: red;
   text-align: center;
   max-width:960px;
-  border:10px green solid;
   margin:30px auto;
   position:relative;
 }
+
 
 @media (max-width: 580px) {
   .Grid {
