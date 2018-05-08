@@ -9,6 +9,8 @@ import About from './About';
 // review main component stucture
 //site wireframe
 // when we pass down state , maybe we should pass down all of it for painter
+// <img src={window.location.origin + '/images/v4b.png'} height="300" width="300" alt="footerPhoto" />
+
 
 class App extends Component {
   constructor(props) {
@@ -98,8 +100,37 @@ class App extends Component {
 
 
           <div className="footer">
-            <img src={window.location.origin + '/images/v4b.png'} height="300" width="300" alt="footerPhoto" />
+            <div className="fup">
+              <div className="f1">
+                <div className="f2">
+                  <a href="#"> About </a>
+                  <a href="#"> Contact </a>
+                  <a href="#"> Careers </a>
+                </div>
+                <div className="f2">
+                  <a href="#"> Find Store </a>
+                  <a href="#"> Returns </a>
+                  <a href="#"> Help </a>
+                </div>
+              </div>
+              <div className="fz" >
+                <a href="#"> Instagram </a>
+                <a href="#"> Facebook </a>
+                <a href="#"> Twitter </a>
+                <a href="#"> Youtube </a>
+              </div>
             </div>
+
+            <div className="fbottom">
+              <hr />
+              <div className="fb1">
+                <a href="#"> xxx </a>
+                <a href="#"> yyy </a>
+                <a href="#"> zzz </a>
+              </div>
+            </div>
+
+          </div>
 
         </div>
       </Router>

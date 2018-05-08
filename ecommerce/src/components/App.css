@@ -184,14 +184,53 @@ margin-top: 5px;
 
 .footer{
   box-sizing: border-box;
+  padding: 20px;
   background-image: linear-gradient(#1C1016, black, #1C1016);
-  color:white;
-  color: red;
-  text-align: center;
+  background-color: white;
+  color:#e5e5e5;
+  display:flex;
+  flex-flow:column;
+  justify-content: space-between;
   max-width:960px;
-  margin:30px auto;
-  position:relative;
+  margin: 0 auto;
+  margin-top:80px;
 }
+
+
+
+.fup{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.f1{
+  display: flex;
+}
+
+.f1 div:last-child{
+  margin-left: 90px;
+}
+
+.f2 {
+  display: flex;
+  flex-flow: column;
+}
+
+/* bottom of footer */
+
+hr{
+  border-color: #e5e5e5;
+}
+
+.fb1{
+  display: flex;
+}
+
+.fb1 a{
+  margin-right: 20px;
+}
+
 
 
 @media (max-width: 580px) {
