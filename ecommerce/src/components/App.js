@@ -5,6 +5,7 @@ import Main from './Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Contact from './Contact';
 import About from './About';
+import {FaCcVisa, FaCcAmex, FaCcMastercard, FaCcPaypal, FaHome, FaPlus, FaInstagram, FaFacebookSquare, FaYoutubeSquare, FaTwitterSquare, FaShoppingCart } from 'react-icons/lib/fa'
 
 // review main component stucture
 //site wireframe
@@ -114,19 +115,20 @@ class App extends Component {
                 </div>
               </div>
               <div className="fz" >
-                <a href="#"> Instagram </a>
-                <a href="#"> Facebook </a>
-                <a href="#"> Twitter </a>
-                <a href="#"> Youtube </a>
+                <a href="#"> <FaInstagram /> </a>
+                <a href="#"> <FaFacebookSquare /> </a>
+                <a href="#"> <FaTwitterSquare /> </a>
+                <a href="#"> <FaYoutubeSquare /> </a>
               </div>
             </div>
 
             <div className="fbottom">
               <hr />
               <div className="fb1">
-                <a href="#"> xxx </a>
-                <a href="#"> yyy </a>
-                <a href="#"> zzz </a>
+                <a href="#"> <FaCcVisa /> </a>
+                <a href="#"> <FaCcAmex /> </a>
+                <a href="#"> <FaCcMastercard /> </a>
+                <a href="#"> < FaCcPaypal /> </a>
               </div>
             </div>
 
