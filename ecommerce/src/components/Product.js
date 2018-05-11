@@ -10,6 +10,7 @@ let Product = (props) => {
       <div className="Product-Wrap">
         <div className="Product-Image">
           <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
+          <p> Quick View </p>
         </div>
         <div className="Product-Desc">
           <div className="Product-name">
