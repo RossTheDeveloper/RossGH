@@ -5,7 +5,7 @@ import Main from './Main';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Contact from './Contact';
 import About from './About';
-import {FaCcVisa, FaCcAmex, FaCcMastercard, FaCcPaypal, FaHome, FaPlus, FaInstagram, FaFacebookSquare, FaYoutubeSquare, FaTwitterSquare, FaShoppingCart } from 'react-icons/lib/fa'
+import {FaClose, FaCcVisa, FaCcAmex, FaCcMastercard, FaCcPaypal, FaHome, FaPlus, FaInstagram, FaFacebookSquare, FaYoutubeSquare, FaTwitterSquare, FaShoppingCart } from 'react-icons/lib/fa'
 
 // review main component stucture
 //site wireframe
@@ -65,6 +65,15 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <div id="modal-container">
+            <div className="modal">
+              <img src={window.location.origin + "/images/n1.png"} alt="img" />
+              <div className="modal-close">
+                <FaClose />
+              </div>
+            </div>
+          </div>
+
           <Nav
             filterChange={this.handleChange}
             value={this.state.value}

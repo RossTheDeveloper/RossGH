@@ -264,3 +264,40 @@ hr{
   }
 
 }
+
+/* --------------------------------------------------
+   modal
+-----------------------------------------------------*/
+
+#modal-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  height:100%;
+  width: 100%;
+  position:absolute;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal{
+  position: relative;
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  max-height: 600px;
+  max-width: 700px;
+}
+
+.modal-close {
+  position:absolute;
+  top:0;
+  right:5px;;
+  font-size: 3em;
+  color: red;
+}
