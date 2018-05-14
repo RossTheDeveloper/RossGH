@@ -80,6 +80,8 @@ let Painter = (props) => {
         <Product
         product={each}
         key={each.name}
+        mouseOver={props.mouseOver}
+        mouseOut={props.mouseOut}
         />
       );
 

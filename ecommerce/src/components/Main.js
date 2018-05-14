@@ -35,6 +35,8 @@ let Main = (props) => (
         gender = {props.gender}
         category={props.category}
         color={props.color}
+        mouseOver={props.mouseOver}
+        mouseOut={props.mouseOut}
       />
 
 
