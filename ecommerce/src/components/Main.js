@@ -12,8 +12,8 @@ let Main = (props) => (
 
 
      <Left
-      sex={props.sex}
-      variety={props.variety}
+      genderUp={props.genderUp}
+      styleUp={props.StyleUp}
       color={props.colorClick}/>
 
 

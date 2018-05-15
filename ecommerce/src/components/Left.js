@@ -4,36 +4,32 @@ import React, { Component } from 'react';
 class Left extends Component {
   constructor(props) {
     super(props);
-    this.maleClick=this.maleClick.bind(this)
-    this.femaleClick=this.femaleClick.bind(this)
-    this.runClick=this.runClick.bind(this)
-    this.casualClick=this.casualClick.bind(this)
+    this.genderClick=this.genderClick.bind(this)
+    this.styleClick=this.styleClick.bind(this)
     this.colorClick=this.colorClick.bind(this)
   }
 
-  maleClick(e){
+  genderClick(e){
     e.preventDefault();
-    this.props.sex("male")
+    this.props.genderUp(e.target.name)
   }
 
-  femaleClick(e){
+
+  styleClick(e){
     e.preventDefault();
-    this.props.sex("female")
+    this.props.styleUp(e.target.name)
+    console.log(e.target.name)
   }
 
-  runClick(e){
-    e.preventDefault();
-    this.props.variety("running")
-  }
-
-  casualClick(e){
-    e.preventDefault();
-    this.props.variety("casual")
-  }
 
   colorClick(e){
     e.preventDefault();
-    this.props.color(e.target.alt)
+    if (e.target.alt === undefined) {
+      return;
+    } else {
+        this.props.color(e.target.alt)
+    }
+
   }
 
 
@@ -45,16 +41,16 @@ render() {
       <div className="xx">
         <div className="xx1"><div>GENDER</div></div>
         <div className="xx2">
-        <a href="#malek" onClick={this.maleClick} alt="yt">Male</a>
-        <a href="#" onClick={this.femaleClick}>Female</a>
+        <a href="#malek" name="male" onClick={this.genderClick} >Male</a>
+        <a href="#" name="female" onClick={this.genderClick}>Female</a>
         </div>
       </div>
 
       <div className="xx">
-        <div className="xx1"><div>TYPE</div></div>
+        <div className="xx1"><div>STYLE</div></div>
         <div className="xx2">
-        <a href="#" onClick={this.runClick}>Running</a>
-        <a href="#" onClick={this.casualClick}>Casual</a>
+        <a href="#" name="running" onClick={this.styleClick}>Running</a>
+        <a href="#" name="casual" onClick={this.styleClick}>Casual</a>
         </div>
       </div>
 

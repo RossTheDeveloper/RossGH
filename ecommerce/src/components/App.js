@@ -20,7 +20,7 @@ class App extends Component {
       value: '',
       select:'',
       gender:'',
-      variety:'',
+      style:'',
       color:'',
       products:[
         {name:"a",id:0,view:"view-2",price:50,color:"x",variety:"casual",gender:"female",arrived:"2015-03-27",img:"/images/n1.png"},
@@ -59,7 +59,7 @@ class App extends Component {
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
     this.genderClick=this.genderClick.bind(this)
-    this.varietyClick=this.varietyClick.bind(this)
+    this.styleClick=this.styleClick.bind(this)
     this.colorClick=this.colorClick.bind(this)
     this.viewOver=this.viewOver.bind(this)
     this.viewOut=this.viewOut.bind(this)
@@ -83,9 +83,9 @@ class App extends Component {
     })
   }
 
-  varietyClick(e){
+  styleClick(e){
     this.setState({
-      variety: e
+      style: e
     })
   }
 
@@ -146,9 +146,9 @@ class App extends Component {
                   text={this.state.value}
                   dropDown ={this.state.select}
                   gender = {this.state.gender}
-                  sex={this.genderClick}
+                  genderUp={this.genderClick}
                   category={this.state.variety}
-                  variety={this.varietyClick}
+                  styleUp={this.styleClick}
                   colorClick={this.colorClick}
                   color={this.state.color}
                   mouseOver={this.viewOver}
