@@ -147,7 +147,7 @@ class App extends Component {
                   dropDown ={this.state.select}
                   gender = {this.state.gender}
                   genderUp={this.genderClick}
-                  category={this.state.variety}
+                  style={this.state.style}
                   styleUp={this.styleClick}
                   colorClick={this.colorClick}
                   color={this.state.color}

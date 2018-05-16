@@ -13,27 +13,20 @@ let Main = (props) => (
 
      <Left
       genderUp={props.genderUp}
-      styleUp={props.StyleUp}
+      styleUp={props.styleUp}
       color={props.colorClick}/>
-
-
-
-
 
     <div className="right">
 
-
-        <Select
-        selectChange={props.selectChange} />
-
-
+      <Select
+      selectChange={props.selectChange} />
 
       <Painter
         products={props.products}
         text={props.text}
         dropDown ={props.dropDown}
         gender = {props.gender}
-        category={props.category}
+        style={props.style}
         color={props.color}
         mouseOver={props.mouseOver}
         mouseOut={props.mouseOut}

@@ -14,7 +14,7 @@ render(){
   return(
 
     <div className="rightTop">
-    <label for="SelectFilter"> <strong> Sort By </strong> </label>
+    <label htmlFor="SelectFilter"> <strong> Sort By </strong> </label>
     <select className="Select" onChange={this.change}
     name="SelectFilter">
     <option value="">- select -</option>

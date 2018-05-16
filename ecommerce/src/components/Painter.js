@@ -9,7 +9,7 @@ let Painter = (props) => {
     let products
     let selectValue = props.dropDown
     let gender = props.gender
-    let variety = props.category
+    let style = props.style
     let currentColor= props.color
     const Prods = [];
 
@@ -19,9 +19,9 @@ let Painter = (props) => {
       products00 = props.products
     }
 
-    if(variety ==='running'){
+    if(style ==='running'){
       products0 = products00.filter( x => x.variety === 'running')
-    } else if(variety ==='casual'){
+    } else if(style ==='casual'){
       products0 = products00.filter( x => x.variety === 'casual')
     } else {
       products0 = products00
@@ -65,25 +65,18 @@ let Painter = (props) => {
 
 
 
-
-
-
-
-
-
     products.forEach((each) => {
+      if(each.name.toLowerCase().indexOf(text) === -1){
+        return;}
 
-     if(each.name.toLowerCase().indexOf(text) === -1){
-       return;}
-
-      Prods.push(
-        <Product
-        product={each}
-        key={each.name}
-        mouseOver={props.mouseOver}
-        mouseOut={props.mouseOut}
-        />
-      );
+       Prods.push(
+         <Product
+         product={each}
+         key={each.name}
+         mouseOver={props.mouseOver}
+         mouseOut={props.mouseOut}
+         />
+       );
 
   });
 
@@ -93,6 +86,7 @@ let Painter = (props) => {
         </div>
       )
 }
+
 
 
 

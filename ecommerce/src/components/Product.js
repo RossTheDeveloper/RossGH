@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 
 
 // fix naming !!!!!
-
+// const name = product.name
+// const price = product.price
+// const gender = product.gender
+// const img = product.img
+// const view = product.view
 
 class Product extends Component {
   constructor(props) {
@@ -22,17 +26,14 @@ class Product extends Component {
 
 
   render(){
+    const product = this.props.product
+    const {name, price, gender, img, view} = product;
 
-    const product = this.props.product.name
-    const price = this.props.product.price
-    const gender = this.props.product.gender
-    const img = this.props.product.img
-    const view = this.props.product.view
 
     return(
       <div className="Product-Wrap"
-       onMouseEnter={() => this.props.mouseOver(this.props.product)}
-       onMouseLeave={() => this.props.mouseOut(this.props.product)}>
+       onMouseEnter={() => this.props.mouseOver(product)}
+       onMouseLeave={() => this.props.mouseOut(product)}>
         <div className="Product-Image">
           <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
           <div className={view}
@@ -42,7 +43,7 @@ class Product extends Component {
         </div>
         <div className="Product-Desc">
           <div className="Product-name">
-            {product}
+            {name}
           </div>
           <div className="Product-gender">
             {gender}
