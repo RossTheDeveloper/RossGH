@@ -29,7 +29,7 @@ this.props.filterChange(e.target.value)
 
     <ul className="flexList">
     <li><Link to="/">Home</Link></li>
-    <li><Link to="/about">About</Link></li>
+    <li><Link to="/about/shoex">About</Link></li>
     <li><Link to="/contact">Contact</Link></li>
     </ul>
 

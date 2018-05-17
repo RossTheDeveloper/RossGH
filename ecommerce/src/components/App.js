@@ -138,7 +138,7 @@ class App extends Component {
 
             <Switch>
               <Route path="/contact" component={Contact}/>
-              <Route path="/about" component={About}/>
+              <Route path="/about/:filter" component={About}/>
               <Route exact path="/" render={(props) => (
                 <Main
                   selectChange={this.handleSelect}
