@@ -321,7 +321,7 @@ hr{
 .modal-close {
   position:absolute;
   top:0;
-  right:5px;;
+  right:5px;
   font-size: 3em;
   color: red;
   cursor: pointer;
