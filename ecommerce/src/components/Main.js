@@ -3,6 +3,26 @@ import Select from './Select';
 import Painter from './Painter';
 import Left from './Left';
 
+// filterClick(e) {
+//
+// switch (e.target.name) {
+//   case "male":
+//       this.setState({gender: e.target.name})
+//       break;
+//   case "female":
+//       this.setState({gender: e.target.name})
+//       break;
+//   case "running":
+//       this.setState({style: e.target.name})
+//       break;
+//   case "casual":
+//       this.setState({style: e.target.name})
+//       break;
+//   case "color":
+//       this.setState({color: e.target.alt})
+//       break;
+// }
+// }
 
 
 
@@ -51,9 +71,7 @@ class Main extends Component {
 
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
-    this.genderClick=this.genderClick.bind(this)
-    this.styleClick=this.styleClick.bind(this)
-    this.colorClick=this.colorClick.bind(this)
+    this.tonyClick=this.tonyClick.bind(this)
     this.viewOver=this.viewOver.bind(this)
     this.viewOut=this.viewOut.bind(this)
   }
@@ -70,24 +88,6 @@ class Main extends Component {
     })
   }
 
-  genderClick(e) {
-    this.setState({
-      gender: e
-    })
-    console.log("gstate")
-  }
-
-  styleClick(e){
-    this.setState({
-      style: e
-    })
-  }
-
-  colorClick(e){
-    this.setState({
-      color: e
-    })
-  }
 
   viewOver(product){
     let products = this.state.products;
@@ -107,6 +107,26 @@ class Main extends Component {
     });
   }
 
+
+
+
+tonyClick(e){
+  let {filter, type} = e.target.dataset
+  this.setState({[filter]: type})
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
   render() {
     return (
 
@@ -114,9 +134,7 @@ class Main extends Component {
 
 
            <Left
-            genderUp={this.genderClick}
-            styleUp={this.styleClick}
-            color={this.colorClick}/>
+            filterUp={this.filterClick} />
 
           <div className="right">
 
