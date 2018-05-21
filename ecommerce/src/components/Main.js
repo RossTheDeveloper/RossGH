@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Select from './Select';
-import Painter from './Painter';
 import Left from './Left';
+import Products from './Products';
 
 // filterClick(e) {
 //
@@ -71,7 +71,7 @@ class Main extends Component {
 
     this.handleChange=this.handleChange.bind(this)
     this.handleSelect=this.handleSelect.bind(this)
-    this.tonyClick=this.tonyClick.bind(this)
+    this.filterClick=this.filterClick.bind(this)
     this.viewOver=this.viewOver.bind(this)
     this.viewOut=this.viewOut.bind(this)
   }
@@ -110,7 +110,7 @@ class Main extends Component {
 
 
 
-tonyClick(e){
+filterClick(e){
   let {filter, type} = e.target.dataset
   this.setState({[filter]: type})
 
@@ -118,6 +118,75 @@ tonyClick(e){
 
 
 
+  filteredProducts(){
+    let text = this.state.value.toLowerCase()
+    let products00
+    let products0
+    let products
+    let selectValue = this.state.select
+    let gender = this.state.gender
+    let style = this.state.style
+    let currentColor= this.state.color
+
+
+    if(currentColor){
+      products00 = this.state.products.filter( x => x.color === currentColor)
+    } else {
+      products00 = this.state.products
+    }
+
+    if(style ==='running'){
+      products0 = products00.filter( x => x.variety === 'running')
+    } else if(style ==='casual'){
+      products0 = products00.filter( x => x.variety === 'casual')
+    } else {
+      products0 = products00
+    }
+
+
+    if(gender ==='male'){
+      products = products0.filter( x => x.gender === 'male')
+    } else if(gender ==='female'){
+      products = products0.filter( x => x.gender === 'female')
+    } else {
+      products = products0
+    }
+
+
+
+    if(selectValue === "ASC"){
+    products.sort((a,b) => (a.price) - (b.price))
+    console.log(products)}
+
+    if(selectValue === "DESC"){
+    products.sort((a,b) => (b.price) - (a.price))
+    console.log(products)}
+
+    if(selectValue === "Alphabetical"){
+    products.sort(function(a, b){
+    if(a.name < b.name) return -1;
+    if(a.name > b.name) return 1;
+    return 0;
+    })
+    console.log(products)}
+
+    if(selectValue === "New Arrivals"){
+    products.sort(function(a, b){
+    if(new Date(a.arrived) < new Date(b.arrived)) return 1;
+    if(new Date(a.arrived) > new Date(b.arrived)) return -1;
+    return 0;
+    })
+    console.log(products)}
+
+
+
+
+     return products.filter((each) =>
+      each.name.toLowerCase().indexOf(text) !== -1
+  );
+
+
+}
 
 
 
@@ -141,16 +210,7 @@ tonyClick(e){
             <Select
             selectChange={this.handleSelect} />
 
-            <Painter
-              products={this.state.products}
-              text={this.state.value}
-              dropDown ={this.state.select}
-              gender = {this.state.gender}
-              style={this.state.style}
-              color={this.state.color}
-              mouseOver={this.viewOver}
-              mouseOut={this.viewOut}
-            />
+            <Products products={this.filteredProducts()} />
 
           </div>
 
