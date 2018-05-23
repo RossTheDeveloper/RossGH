@@ -4,11 +4,15 @@ import Product from './Product';
 
 class Products extends Component{
 
+
   renderProducts= () => {
+
     return this.props.products.map((each) => (
       <Product
       product={each}
       key={each.id}
+      mouseOver={this.props.mouseOver}
+      mouseOut={this.props.mouseOut}
       />
     ))
 }

@@ -35,8 +35,7 @@ this.props.filterChange(e.target.value)
 
     <img src={logo} className="App-logo" alt="logo"/>
 
-    <Search value={this.props.value}
-      change={this.change} />
+    <div className="temp"> temp </div>
 
 
       </header>

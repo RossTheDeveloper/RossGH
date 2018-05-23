@@ -2,27 +2,8 @@ import React, { Component } from 'react';
 import Select from './Select';
 import Left from './Left';
 import Products from './Products';
+import Search from './Search'
 
-// filterClick(e) {
-//
-// switch (e.target.name) {
-//   case "male":
-//       this.setState({gender: e.target.name})
-//       break;
-//   case "female":
-//       this.setState({gender: e.target.name})
-//       break;
-//   case "running":
-//       this.setState({style: e.target.name})
-//       break;
-//   case "casual":
-//       this.setState({style: e.target.name})
-//       break;
-//   case "color":
-//       this.setState({color: e.target.alt})
-//       break;
-// }
-// }
 
 
 
@@ -207,10 +188,15 @@ filterClick(e){
 
           <div className="right">
 
+          <Search value={this.state.value}
+            change={this.handleChange} />
+
             <Select
             selectChange={this.handleSelect} />
 
-            <Products products={this.filteredProducts()} />
+            <Products products={this.filteredProducts()}
+            mouseOver={this.viewOver}
+            mouseOut={this.viewOut}/>
 
           </div>
 

@@ -15,22 +15,6 @@ import {FaClose } from 'react-icons/lib/fa'
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: '',
-};
-
-    this.handleChange=this.handleChange.bind(this)
-
-  }
-
-  handleChange(e){
-    this.setState({
-      value: e
-    })
-  }
-
 
 
   render() {
@@ -48,8 +32,7 @@ class App extends Component {
           </div>
 
           <Nav
-            filterChange={this.handleChange}
-            value={this.state.value}
+
             />
 
           <div className="space"> </div>

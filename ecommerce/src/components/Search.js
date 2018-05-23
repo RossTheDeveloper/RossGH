@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-const Search = (props) =>
+class Search extends Component {
 
-<form className="SearchForm">
-  <input  type="search" name="search" placeholder="Search..." value={props.value}
-  onChange={props.change} />
-</form>
+  handleChange = (e) => {
+    (this.props.change(e.target.value))
+  }
 
+
+  render(){
+    return(
+    <div className="searchForm0">
+    <form className="SearchForm">
+      <input  type="search" name="search" placeholder="Search Product..." value={this.props.value}
+      onChange={this.handleChange} />
+    </form>
+    </div>
+    )
+  }
+}
 
 
 export default Search;
