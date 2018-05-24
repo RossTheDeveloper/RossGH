@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 
 
 class Left extends Component {
-  constructor(props) {
-    super(props);
-    this.filterClick=this.filterClick.bind(this)
-}
 
-  filterClick(e){
+
+  filterClick = (e) => {
     e.preventDefault();
     this.props.filterUp(e)
-    console.log(e)
-
   }
 
 

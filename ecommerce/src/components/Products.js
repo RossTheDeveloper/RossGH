@@ -5,7 +5,7 @@ import Product from './Product';
 class Products extends Component{
 
 
-  renderProducts= () => {
+  renderProducts = () => {
 
     return this.props.products.map((each) => (
       <Product

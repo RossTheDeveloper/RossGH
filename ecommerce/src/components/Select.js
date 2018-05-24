@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 
 class Select extends Component {
-  constructor(props){
-    super(props);
-    this.change=this.change.bind(this)
-  }
 
-change(e){
+
+change = (e) => {
  this.props.selectChange(e.target.value)
 }
 

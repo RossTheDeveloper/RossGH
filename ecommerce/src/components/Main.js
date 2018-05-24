@@ -48,29 +48,25 @@ class Main extends Component {
         {name:"zb",id:28,view:"view-2",price:99,color:"orange",variety:"running",gender:"female",arrived:"2017-03-23",img:"/images/v21.png"},
         {name:"zc",id:29,view:"view-2",price:99,color:"green",variety:"running",gender:"female",arrived:"2017-03-23",img:"/images/v22.png"}
       ]
-};
+    };
 
-    this.handleChange=this.handleChange.bind(this)
-    this.handleSelect=this.handleSelect.bind(this)
-    this.filterClick=this.filterClick.bind(this)
-    this.viewOver=this.viewOver.bind(this)
-    this.viewOut=this.viewOut.bind(this)
+
   }
 
-  handleChange(e){
+  handleChange = (e) => {
     this.setState({
       value: e
     })
   }
 
-  handleSelect(e){
+  handleSelect = (e) => {
     this.setState({
       select:e
     })
   }
 
 
-  viewOver(product){
+  viewOver = (product) => {
     let products = this.state.products;
     products[product.id].view = 'view-1';
 
@@ -79,7 +75,7 @@ class Main extends Component {
     })
   }
 
-  viewOut(product){
+  viewOut = (product) => {
     let products = this.state.products;
     products[product.id].view = 'view-2';
 
@@ -91,7 +87,7 @@ class Main extends Component {
 
 
 
-filterClick(e){
+filterClick = (e) => {
   let {filter, type} = e.target.dataset
   this.setState({[filter]: type})
 

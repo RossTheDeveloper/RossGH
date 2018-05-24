@@ -13,12 +13,9 @@ import { Link } from 'react-router-dom';
     // </ul>
 
 class Nav extends Component {
-  constructor(props) {
-    super(props);
-    this.change=this.change.bind(this)
-  }
 
-change(e){
+
+change = (e) => {
 this.props.filterChange(e.target.value)
 }
 
