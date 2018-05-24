@@ -13,6 +13,8 @@ class Products extends Component{
       key={each.id}
       mouseOver={this.props.mouseOver}
       mouseOut={this.props.mouseOut}
+      modal={() => this.props.modal(true)}
+      modalPhoto={(e) => this.props.modalPhoto(e)}
       />
     ))
 }

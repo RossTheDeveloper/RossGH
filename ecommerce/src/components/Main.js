@@ -3,6 +3,7 @@ import Select from './Select';
 import Left from './Left';
 import Products from './Products';
 import Search from './Search'
+import Modal from './Modal'
 
 
 
@@ -16,6 +17,8 @@ class Main extends Component {
       gender:'',
       style:'',
       color:'',
+      modal1:'',
+      modal2: false,
       products:[
         {name:"a",id:0,view:"view-2",price:50,color:"x",variety:"casual",gender:"female",arrived:"2015-03-27",img:"/images/n1.png"},
         {name:"b",id:1,view:"view-2",price:70,color:"x",variety:"casual",gender:"male",arrived:"2015-03-29",img:"/images/n2.png"},
@@ -82,6 +85,18 @@ class Main extends Component {
     this.setState({
       products,
     });
+  }
+
+  modal = (e) => {
+    this.setState({
+      modal2: e
+    })
+  }
+
+  modalPhoto = (e) => {
+    this.setState({
+      modal1: e
+    })
   }
 
 
@@ -178,7 +193,9 @@ filterClick = (e) => {
 
       <div className="content">
 
-
+          <Modal modal={this.modal}
+              photo={this.state.modal1}
+              status={this.state.modal2}/>
            <Left
             filterUp={this.filterClick} />
 
@@ -192,7 +209,9 @@ filterClick = (e) => {
 
             <Products products={this.filteredProducts()}
             mouseOver={this.viewOver}
-            mouseOut={this.viewOut}/>
+            mouseOut={this.viewOut}
+            modal={this.modal}
+            modalPhoto={this.modalPhoto}/>
 
           </div>
 

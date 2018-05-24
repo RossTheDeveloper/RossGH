@@ -2,12 +2,7 @@ import React, { Component } from 'react';
 
 
 
-// fix naming !!!!!
-// const name = product.name
-// const price = product.price
-// const gender = product.gender
-// const img = product.img
-// const view = product.view
+
 
 class Product extends Component {
   constructor(props) {
@@ -19,8 +14,8 @@ class Product extends Component {
 
 
   modal(img){
-    document.getElementById("modal-container").style.display="flex"
-    document.getElementById("modal-img" ).setAttribute('src', img)
+    this.props.modal()
+    this.props.modalPhoto(this.props.product.img)
 
   }
 

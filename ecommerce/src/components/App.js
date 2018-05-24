@@ -21,19 +21,9 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div id="modal-container">
-            <div className="modal">
-              <img id="modal-img" src="/images/n5.png" alt="img" />
-              <div className="modal-close"
-                onClick={() => document.getElementById("modal-container").style.display="none"}>
-                <FaClose />
-              </div>
-            </div>
-          </div>
 
-          <Nav
 
-            />
+          <Nav />
 
           <div className="space"> </div>
 
