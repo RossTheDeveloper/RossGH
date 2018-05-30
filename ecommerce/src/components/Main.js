@@ -118,6 +118,16 @@ class Main extends Component {
     })
   }
 
+  filterRemove = (e) => {
+    let {name} = e.currentTarget
+
+    this.setState((prevState) => {
+      let newFilters = prevState.filters.filter((filt) => filt !== name)
+      return {filters: newFilters}
+    })
+
+    this.setState({[name]:''})
+  }
 
 
   filteredProducts(){
@@ -214,7 +224,9 @@ class Main extends Component {
           <Search value={this.state.value}
             change={this.handleChange} />
 
-          <Filters filters={this.state.filters} />
+          <Filters filters={this.state.filters}
+                   remove={this.filterRemove}/>
+
             <Select
             selectChange={this.handleSelect} />
 

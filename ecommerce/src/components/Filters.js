@@ -14,14 +14,19 @@ class Filters extends Component{
 
 
 
+  remove = (e) => {
+    e.preventDefault();
+    this.props.remove(e)
+  }
+
 
   renderFilters = () => {
 
     return this.props.filters.map((each, i) => (
-      <div>
-        <p key={i}> {each} <span onClick={()=>console.log("okeaaaa")}> <FaClose /> </span> </p>
 
-      </div>
+        <div key={i}> {each} <a name={each} onClick={this.remove}> <FaClose /> </a> </div>
+
+
 
     ))
 }
