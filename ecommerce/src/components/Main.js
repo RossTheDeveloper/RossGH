@@ -4,6 +4,8 @@ import Left from './Left';
 import Products from './Products';
 import Search from './Search'
 import Modal from './Modal'
+import Filters from './Filters'
+
 
 
 
@@ -19,6 +21,7 @@ class Main extends Component {
       color:'',
       modal1:'',
       modal2: false,
+      filters:[],
       products:[
         {name:"a",id:0,view:"view-2",price:50,color:"x",variety:"casual",gender:"female",arrived:"2015-03-27",img:"/images/n1.png"},
         {name:"b",id:1,view:"view-2",price:70,color:"x",variety:"casual",gender:"male",arrived:"2015-03-29",img:"/images/n2.png"},
@@ -102,11 +105,18 @@ class Main extends Component {
 
 
 
-filterClick = (e) => {
-  let {filter, type} = e.target.dataset
-  this.setState({[filter]: type})
+  filterClick = (e) => {
+    let {filter, type} = e.target.dataset
+    this.setState({[filter]: type})
 
-}
+    this.setState((prevState) => {
+      if(prevState.filters.includes(filter)) {
+        return
+      } else {
+      return {filters: [...prevState.filters, filter]}
+      }
+    })
+  }
 
 
 
@@ -204,6 +214,7 @@ filterClick = (e) => {
           <Search value={this.state.value}
             change={this.handleChange} />
 
+          <Filters filters={this.state.filters} />
             <Select
             selectChange={this.handleSelect} />
 
