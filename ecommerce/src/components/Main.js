@@ -103,8 +103,6 @@ class Main extends Component {
   }
 
 
-
-
   filterClick = (e) => {
     let {filter, type} = e.target.dataset
     this.setState({[filter]: type})
@@ -113,10 +111,14 @@ class Main extends Component {
       if(prevState.filters.includes(filter)) {
         return
       } else {
+        console.log(this.state.filters.indexOf(filter))
       return {filters: [...prevState.filters, filter]}
       }
     })
   }
+
+
+
 
   filterRemove = (e) => {
     let {name} = e.currentTarget
@@ -128,6 +130,11 @@ class Main extends Component {
 
     this.setState({[name]:''})
   }
+
+
+
+
+
 
 
   filteredProducts(){
@@ -216,6 +223,7 @@ class Main extends Component {
           <Modal modal={this.modal}
               photo={this.state.modal1}
               status={this.state.modal2}/>
+
            <Left
             filterUp={this.filterClick} />
 
@@ -224,11 +232,13 @@ class Main extends Component {
           <Search value={this.state.value}
             change={this.handleChange} />
 
+          <div className="rightTop">
           <Filters filters={this.state.filters}
                    remove={this.filterRemove}/>
 
             <Select
             selectChange={this.handleSelect} />
+          </div>
 
             <Products products={this.filteredProducts()}
             mouseOver={this.viewOver}

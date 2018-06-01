@@ -34,7 +34,7 @@ class Filters extends Component{
   render() {
 
     return(
-    <div>
+    <div className="filtered">
     {this.renderFilters()}
     </div>
     )

@@ -10,7 +10,7 @@ change = (e) => {
 render(){
   return(
 
-    <div className="rightTop">
+    <div>
     <label htmlFor="SelectFilter"> <strong> Sort By </strong> </label>
     <select className="Select" onChange={this.change}
     name="SelectFilter">
