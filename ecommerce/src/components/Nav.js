@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import logo from './jackal.png';
+import logo from "../jackal.png";
 import Search from './Search'
 import { Link } from 'react-router-dom';
-
+// <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
 // import {Link} from 'react-router-dom'
 
 

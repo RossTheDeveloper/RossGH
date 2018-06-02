@@ -15,7 +15,7 @@ render() {
 
   return(
     <div className="left filters">
-      <div className="xx">
+      <div className={(this.props.gender)?"yy":"xx"}>
         <div className="xx1"><div>GENDER</div></div>
         <div className="xx2">
         <a href="#malek" data-filter="gender" data-type="male"  onClick={this.filterClick} >Male</a>
@@ -23,7 +23,7 @@ render() {
         </div>
       </div>
 
-      <div className="xx">
+      <div className={(this.props.style)?"yy":"xx"}>
         <div className="xx1"><div>STYLE</div></div>
         <div className="xx2">
         <a href="#" data-filter="style" data-type="running" onClick={this.filterClick}>Running</a>
@@ -31,7 +31,7 @@ render() {
         </div>
       </div>
 
-      <div className="xx">
+      <div className={(this.props.color)?"yy":"xx"}>
         <div className="xx1"><div>COLOR</div></div>
         <div className="xx3">
         <a onClick={this.filterClick}  data-filter="color" data-type="red" href="#"><img data-filter="color" src={window.location.origin + '/colors/red.png'} data-type="red" /></a>

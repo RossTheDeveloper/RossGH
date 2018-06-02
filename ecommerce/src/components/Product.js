@@ -5,15 +5,11 @@ import React, { Component } from 'react';
 
 
 class Product extends Component {
-  constructor(props) {
-    super(props);
-    this.modal=this.modal.bind(this);
-
-  }
 
 
 
-  modal(img){
+
+  modal = (img) => {
     this.props.modal()
     this.props.modalPhoto(this.props.product.img)
 

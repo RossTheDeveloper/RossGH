@@ -82,7 +82,7 @@ ul li{
   display:flex;
   flex-flow: column;
   justify-content: flex-start;
-  height:350px;
+
   margin-right:5px;
   color:white;
 
@@ -96,6 +96,11 @@ justify-content: space-around;
 background-color: #38363b;
 margin-top: 5px;
 border-radius: 3px;
+height: 100px;
+}
+
+.filters .yy {
+display: none;
 }
 
 .xx1{

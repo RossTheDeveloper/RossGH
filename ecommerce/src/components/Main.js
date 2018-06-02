@@ -111,7 +111,6 @@ class Main extends Component {
       if(prevState.filters.includes(filter)) {
         return
       } else {
-        console.log(this.state.filters.indexOf(filter))
       return {filters: [...prevState.filters, filter]}
       }
     })
@@ -225,7 +224,10 @@ class Main extends Component {
               status={this.state.modal2}/>
 
            <Left
-            filterUp={this.filterClick} />
+            filterUp={this.filterClick}
+            gender={this.state.gender}
+            style={this.state.style}
+            color={this.state.color}/>
 
           <div className="right">
 
@@ -233,8 +235,8 @@ class Main extends Component {
             change={this.handleChange} />
 
           <div className="rightTop">
-          <Filters filters={this.state.filters}
-                   remove={this.filterRemove}/>
+            <Filters filters={this.state.filters}
+                     remove={this.filterRemove}/>
 
             <Select
             selectChange={this.handleSelect} />
@@ -248,7 +250,7 @@ class Main extends Component {
 
           </div>
 
-          </div>
+      </div>
 
 
 
