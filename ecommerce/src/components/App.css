@@ -51,6 +51,7 @@ ul li{
 .temp {
   /* border:2px solid red;
   margin-left: auto; */
+  display: relative;
   margin-right: 1em;
 }
 
@@ -66,6 +67,18 @@ ul li{
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 } */
+
+.sugg {
+  position: absolute;
+  background-color: white;
+  text-align: left;
+  width:100px;
+  z-index: 10;
+}
+
+.sugg2{
+  display: none;
+}
 /*----------------------------content ------------------------------------------ */
 .content {
   display:flex;

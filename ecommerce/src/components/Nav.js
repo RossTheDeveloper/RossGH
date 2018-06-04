@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from "../jackal.png";
 import Search from './Search'
 import { Link } from 'react-router-dom';
+import Suggestions from './Suggestions'
 // <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
 // import {Link} from 'react-router-dom'
 
@@ -14,9 +15,25 @@ import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 
+state={
+  results:["aa","bb","cc","dd","ee"],
+  filtered:[]
+}
 
-change = (e) => {
-this.props.filterChange(e.target.value)
+change = () => {
+  if(this.search.value.length > 0){
+  const filt1 = this.state.results.filter((each)=>{
+    return each.toLowerCase().indexOf(this.search.value.toLowerCase()) !== -1
+  })
+
+  const filt2 = filt1.slice(0,3)
+
+  this.setState({filtered:filt2})
+  console.log(this.state.filtered)
+} else if (!this.search.value) {
+  this.setState({filtered:[]})
+}
+
 }
 
   render(){
@@ -32,7 +49,17 @@ this.props.filterChange(e.target.value)
 
     <img src={logo} className="App-logo" alt="logo"/>
 
-    <div className="temp"> temp </div>
+    <div className="temp">
+
+      <form>
+          <input
+            placeholder="Search for..."
+            ref={input => this.search = input}
+            onChange={this.change}
+          />
+          <Suggestions results={this.state.filtered} />
+      </form>
+    </div>
 
 
       </header>
