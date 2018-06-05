@@ -16,23 +16,24 @@ import Suggestions from './Suggestions'
 class Nav extends Component {
 
 state={
-  results:["aa","bb","cc","dd","ee"],
+  results:[{id:7},{id:8}],
   filtered:[]
 }
 
 change = () => {
-  if(this.search.value.length > 0){
+  if(this.search.value){
   const filt1 = this.state.results.filter((each)=>{
     return each.toLowerCase().indexOf(this.search.value.toLowerCase()) !== -1
   })
 
-  const filt2 = filt1.slice(0,3)
+  this.setState({filtered:filt1.slice(0,3)})
 
-  this.setState({filtered:filt2})
-  console.log(this.state.filtered)
 } else if (!this.search.value) {
   this.setState({filtered:[]})
+  console.log("emp")
 }
+
+
 
 }
 
@@ -43,7 +44,7 @@ change = () => {
 
     <ul className="flexList">
     <li><Link to="/">Home</Link></li>
-    <li><Link to="/about/shoex">About</Link></li>
+    <li><Link to={`/about/${this.state.results[0].id}`}>About</Link></li>
     <li><Link to="/contact">Contact</Link></li>
     </ul>
 
