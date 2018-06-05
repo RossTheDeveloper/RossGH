@@ -9,9 +9,11 @@ class Product extends Component {
 
 
 
-  modal = (img) => {
+  modal = (img,e) => {
+    e.preventDefault()
     this.props.modal()
     this.props.modalPhoto(this.props.product.img)
+
 
   }
 
@@ -22,13 +24,13 @@ class Product extends Component {
 
 
     return(
-      <div className="Product-Wrap"
+      <div
        onMouseEnter={() => this.props.mouseOver(product)}
        onMouseLeave={() => this.props.mouseOut(product)}>
         <div className="Product-Image">
           <img src={window.location.origin + `${img}`} alt="img test" width="170" height="170" />
           <div className={view}
-          onClick= {() => this.modal(img)} >
+          onClick= {(e) => this.modal(img,e)} >
           Quick View
           </div>
         </div>

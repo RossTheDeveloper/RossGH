@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Product from './Product';
+import { Link } from 'react-router-dom';
 
 
 class Products extends Component{
@@ -7,7 +8,10 @@ class Products extends Component{
 
   renderProducts = () => {
 
+    
+
     return this.props.products.map((each) => (
+      <Link className="Product-Wrap" to={`/about/${each.id}`}>
       <Product
       product={each}
       key={each.id}
@@ -16,6 +20,7 @@ class Products extends Component{
       modal={() => this.props.modal(true)}
       modalPhoto={(e) => this.props.modalPhoto(e)}
       />
+      </Link>
     ))
 }
 

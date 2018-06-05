@@ -16,7 +16,7 @@ import Suggestions from './Suggestions'
 class Nav extends Component {
 
 state={
-  results:[{id:7},{id:8}],
+  results:["aaa","bbb"],
   filtered:[]
 }
 

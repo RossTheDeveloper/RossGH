@@ -91,6 +91,7 @@ class Main extends Component {
   }
 
   modal = (e) => {
+
     this.setState({
       modal2: e
     })
