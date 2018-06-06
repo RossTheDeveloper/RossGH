@@ -322,6 +322,7 @@ hr{
 
 
 
+
 @media (max-width: 580px) {
   .Grid {
     display:grid;
@@ -377,4 +378,37 @@ hr{
   font-size: 3em;
   color: red;
   cursor: pointer;
+}
+/*----------------------------Product Bar--------------------------------------------- */
+.Bar-Wrap{
+  display: flex;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  transition: .3s;
+
+  /* border: 2px solid red; */
+  margin:7px;
+}
+
+.bar{
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.Bar-right {
+  border: red solid 1px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+
+}
+
+.B-bottom{
+  border: green solid 1px;
+  display: flex;
+  justify-content: space-around;
 }

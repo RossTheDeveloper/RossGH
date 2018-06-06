@@ -8,13 +8,12 @@ class Products extends Component{
 
   renderProducts = () => {
 
-    
+
 
     return this.props.products.map((each) => (
-      <Link className="Product-Wrap" to={`/about/${each.id}`}>
+      <Link key={each.id} className="Product-Wrap" to={`/product/${each.id}`}>
       <Product
       product={each}
-      key={each.id}
       mouseOver={this.props.mouseOver}
       mouseOut={this.props.mouseOut}
       modal={() => this.props.modal(true)}

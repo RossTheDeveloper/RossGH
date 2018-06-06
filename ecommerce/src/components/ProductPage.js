@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ChosenProduct from './ChosenProduct';
+import ProductBar from './ProductBar';
 
 
 
@@ -7,7 +7,7 @@ import ChosenProduct from './ChosenProduct';
 
 
 
-class About extends Component {
+class ProductPage extends Component {
 
   state= {
     products:[
@@ -46,30 +46,20 @@ class About extends Component {
 
   renderProduct = () => {
     const chosen = parseInt(this.props.match.params.filter)
-    console.log(typeof(chosen))
-    const product = this.state.products.filter(each => each.id === chosen )
-    
-    return product.map((each, i) => (
-      <ChosenProduct
-      product={each}
-      key={each.name}
-      />
-    ))
+    return this.state.products.find(each => each.id === chosen)
 }
+
 
 
 render(){
   return (
     <div>
-      <h1>About</h1>
-
-      <h1>{this.props.match.params.filter}</h1>
-      {this.renderProduct()}
-
-
+    <ProductBar
+    product={this.renderProduct()}
+    />
     </div>
   );
 }
 }
 
-export default About;
+export default ProductPage;

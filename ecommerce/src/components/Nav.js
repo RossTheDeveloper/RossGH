@@ -44,7 +44,7 @@ change = () => {
 
     <ul className="flexList">
     <li><Link to="/">Home</Link></li>
-    <li><Link to={`/about/${this.state.results[0].id}`}>About</Link></li>
+    <li><Link to={`/product/${this.state.results[0].id}`}>temp</Link></li>
     <li><Link to="/contact">Contact</Link></li>
     </ul>
 

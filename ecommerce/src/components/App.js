@@ -5,7 +5,7 @@ import Main from './Main';
 import Footer from './Footer';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Contact from './Contact';
-import About from './About';
+import ProductPage from './ProductPage';
 import {FaClose } from 'react-icons/lib/fa'
 
 // review main component stucture
@@ -31,7 +31,7 @@ class App extends Component {
 
             <Switch>
               <Route path="/contact" component={Contact}/>
-              <Route path="/about/:filter" component={About}/>
+              <Route path="/product/:filter" component={ProductPage}/>
               <Route exact path="/" render={(props) => (
                 <Main />
               )} />
