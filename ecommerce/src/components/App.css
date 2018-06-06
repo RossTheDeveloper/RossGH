@@ -382,14 +382,15 @@ hr{
 /*----------------------------Product Bar--------------------------------------------- */
 .Bar-Wrap{
   display: flex;
+  max-width:960px;
+  margin: 0 auto;
   box-sizing: border-box;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
   transition: .3s;
-
+  color:black;
   /* border: 2px solid red; */
-  margin:7px;
 }
 
 .bar{
@@ -399,16 +400,23 @@ hr{
   justify-content: center;
 }
 
+.Bar-left{
+  display: flex;
+  align-items: flex-end;
+}
 .Bar-right {
-  border: red solid 1px;
   display: flex;
   flex-flow: column;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+
+
+.B-top{
 
 }
 
 .B-bottom{
-  border: green solid 1px;
   display: flex;
   justify-content: space-around;
+  color:red;
 }
