@@ -39,6 +39,34 @@ a{
   margin: 0 auto;
 }
 
+.searchFix{
+  display:flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  max-width:1280px;
+  margin: 0 auto;
+}
+
+.searchFix2{
+  display:none;
+}
+
+.mainSearch {
+  box-sizing: border-box;
+  color: red;
+  text-align: left;
+  width:1280px;
+  height:50px;
+  font-size:1.5em;
+  margin: 0 auto;
+}
+
+.FaSearch{
+  font-size: 1.5em;
+}
+
 .flexList{
   display: flex;
   justify-content: flex-start;
