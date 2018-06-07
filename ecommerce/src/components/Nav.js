@@ -82,7 +82,7 @@ searchOff = () => {
 
     <ul className="flexList">
     <li><Link to="/">Home</Link></li>
-    <li><Link to={`/product/${this.state.products[0].id}`}>temp</Link></li>
+    <li><Link to={`/product/1`}>temp</Link></li>
     <li><Link to="/contact">Contact</Link></li>
     </ul>
 
