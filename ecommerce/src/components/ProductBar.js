@@ -6,6 +6,8 @@ import React, { Component } from 'react';
 
 class ProductBar extends Component {
 
+  state={cart:[]}
+
 addToCart = () => {
   const product = this.props.product
   const finishedProduct = {
@@ -14,7 +16,14 @@ addToCart = () => {
     qty: this.refs.qty.value
   }
 
-console.log(finishedProduct)
+this.setState((prevState)=>{
+  return{
+    cart:[ ...prevState.cart, finishedProduct]
+  }
+})
+
+console.log(this.state.cart)
+
 
 }
 
@@ -25,9 +34,36 @@ console.log(finishedProduct)
   render(){
     const product = this.props.product
     const {name, price, gender, img, view, id} = product;
+    const cartProducts = this.state.cart.map((each)=> {
+
+      return <div key={each.id} className="cartProductwrap">
+              <div className="cpLeft">
+              <img src={window.location.origin + `${each.img}`} height="100" width="100" />
+              </div>
+
+              <div className="cpRight">
+
+              <h4>{`${each.name} -${each.gender}`}</h4>
+              <h4>{`color -${each.color}`}</h4>
+              <h4>{`size -${each.size}`}</h4>
+              <h4>{`QTY -${each.qty}`}</h4>
+
+              <div className="cartEdit">
+                <div className="removeProdCart">
+                  <button type="button"> Remove </button>
+                </div>
+
+              </div>
+
+              </div>
+
+             </div>
+    })
+
 
 
     return(
+      <div>
       <div className="Bar-Wrap">
         <div className="Bar-left bar">
           <img className="Bar-Image" src={window.location.origin + `${img}`} alt="img test" width="350" height="350" />
@@ -64,6 +100,36 @@ console.log(finishedProduct)
 
           </div>
       </div>
+
+
+      <div className="cs-wrap">
+
+        <div className="cs-left">
+        <h2> Your Cart {`(${this.state.cart.length})`}</h2>
+        <hr />
+        {cartProducts}
+        </div>
+
+        <div className="cs-right">
+        <h2>Summary</h2>
+        <hr />
+
+        </div>
+
+
+      </div>
+
+
+
+
+      </div>
+
+
+
+
+
+
+
     )
   }
 }

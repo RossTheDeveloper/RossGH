@@ -448,3 +448,62 @@ hr{
   justify-content: space-around;
   color:red;
 }
+/*----------------------------cart  Bar 22222--------------------------------------------- */
+.cs-wrap{
+  display: flex;
+  max-width:960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 10px;
+  color:black;
+  margin-top: 50px;
+  min-height: 300px;
+  /* border: 2px solid red; */
+}
+
+.cs-left{
+  box-sizing: border-box;
+  border:red solid 5px;
+  width:65%;
+}
+
+.cs-right{
+  text-align: center;
+  box-sizing: border-box;
+  border:green solid 5px;
+  width:35%;
+}
+
+.cartProductwrap{
+  display:flex;
+  border: green solid 2px;
+}
+
+.cpLeft{
+  width:40%;
+  box-sizing: border-box;
+
+}
+
+
+.cpRight{
+  display: flex;
+  box-sizing: border-box;
+  flex-flow: column;
+  justify-content: flex-start;
+  width:60%;
+  margin-top:2px;
+  font-size: .8em;
+  border: blue solid 2px;
+}
+
+.cpRight h4{
+  margin-top:0;
+  margin-bottom: 4px;
+}
+.cartEdit{
+  display: flex;
+
+
+}
