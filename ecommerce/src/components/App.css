@@ -502,8 +502,42 @@ hr{
   margin-top:0;
   margin-bottom: 4px;
 }
+
+.cartNP{
+  display:flex;
+  justify-content: space-between;
+}
+
+.cartNP h4:last-child{
+  margin-right:10px;
+  color:red;
+
+}
+
 .cartEdit{
   display: flex;
 
+}
 
+
+
+.cs-right hr {
+  margin-bottom: 0;
+}
+
+
+.Details{
+  border: red solid 2px;
+  height:300px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+
+.Details div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height:50px;
+  background: lightblue;
 }
