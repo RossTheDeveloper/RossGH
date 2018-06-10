@@ -9,6 +9,7 @@ const Suggestions = (props) => {
       </Link>
     </li>
   ))
+  
   return <div className={(props.results.length !== 0)? "sugg": "sugg2"}>
           <ul>{options}</ul>
           </div>

@@ -11,9 +11,8 @@ import Filters from './Filters'
 
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+
+  state = {
       value: '',
       select:'',
       gender:'',
@@ -57,7 +56,7 @@ class Main extends Component {
     };
 
 
-  }
+
 
   handleChange = (e) => {
     this.setState({
