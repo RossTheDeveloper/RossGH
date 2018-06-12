@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 class Nav extends Component {
 
-state={
+state= {
   search:false
 }
 
