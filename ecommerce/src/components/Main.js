@@ -204,7 +204,7 @@ class Main extends Component {
   );
 
 
-}
+  }
 
 
 
@@ -219,9 +219,9 @@ class Main extends Component {
 
       <div className="content">
 
-          <Modal modal={this.modal}
-              photo={this.state.modal1}
-              status={this.state.modal2}/>
+        <Modal modal={this.modal}
+          photo={this.state.modal1}
+          status={this.state.modal2}/>
 
            <Left
             filterUp={this.filterClick}
